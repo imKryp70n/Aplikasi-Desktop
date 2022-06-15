@@ -20,7 +20,9 @@ namespace Aplikasi_TiketKeun
         string SQLConn = "server=localhost;user id=root;database=db_win;sslmode=Disabled";
         private void gunaButton2_Click(object sender, EventArgs e)
         {
+            
             this.Close();
+            new Login().Show();
         }
 
         private void gunaButton4_Click(object sender, EventArgs e)

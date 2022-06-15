@@ -19,8 +19,16 @@ namespace Aplikasi_TiketKeun
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            new Login().Close();
-            this.Close();
+
+            var Logout = MessageBox.Show("Apakah anda ingin logout?", "TiketKeun", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (Logout == DialogResult.OK)
+            {
+                this.Close();
+                new Login().Show();
+            } else
+            {
+
+            }
         }
 
         private void gunaButton4_Click(object sender, EventArgs e)
