@@ -73,21 +73,49 @@ namespace Aplikasi_TiketKeun
             MySqlConnection conn = new MySqlConnection(SQLConn);
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter DA = new MySqlDataAdapter();
+            
             MySqlDataReader row;
-            string Query = "SELECT * FROM user WHERE username=@username and password=@password";
+            string Query = "SELECT * FROM employee WHERE username=@username and password=@password";
             MySqlCommand cmd = new MySqlCommand(Query,conn);
             cmd.Parameters.AddWithValue("@username", UsernameBox.Text);
             cmd.Parameters.AddWithValue("@password", PasswordBox.Text);
             cmd.ExecuteNonQuery();
             row = cmd.ExecuteReader();
+            string Role;
             if (UsernameBox.Text != "" && UsernameBox.Text != "")
             {
+
                 if (row.HasRows)
                 {
-                    MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    new Beranda().Show();
+                    while (row.Read())
+                    {
+                        Role = row["JobID"].ToString();
+                        if (Role == "1")
+                        {
+                            MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            new Beranda().Show();
+
+                        }
+                        else if (Role == "2")
+                        {
+                            MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            new HouseKeeperSupervisor().Show();
+                        }
+                        else if (Role == "3")
+                        {
+                            MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            new HouseKeeper().Show();
+
+                        } else
+                        {
+                            MessageBox.Show("Login Gagal", "TiketKeun", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    
+
                 }
                 else
                 {
@@ -104,6 +132,11 @@ namespace Aplikasi_TiketKeun
         {
             this.Hide();
             new Register().Show();
+        }
+
+        private void PasswordBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

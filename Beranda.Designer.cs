@@ -35,9 +35,17 @@ namespace Aplikasi_TiketKeun
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaButton10 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton8 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton7 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton6 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton11 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -110,18 +118,164 @@ namespace Aplikasi_TiketKeun
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.gunaPanel2.Controls.Add(this.gunaButton11);
+            this.gunaPanel2.Controls.Add(this.gunaButton10);
+            this.gunaPanel2.Controls.Add(this.gunaButton9);
+            this.gunaPanel2.Controls.Add(this.gunaButton8);
+            this.gunaPanel2.Controls.Add(this.gunaButton7);
+            this.gunaPanel2.Controls.Add(this.gunaButton6);
             this.gunaPanel2.Controls.Add(this.gunaButton5);
             this.gunaPanel2.Controls.Add(this.gunaButton1);
             this.gunaPanel2.Controls.Add(this.gunaButton3);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel2.Location = new System.Drawing.Point(0, 33);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(182, 552);
+            this.gunaPanel2.Size = new System.Drawing.Size(197, 552);
             this.gunaPanel2.TabIndex = 1;
             // 
             // gunaDragControl1
             // 
             this.gunaDragControl1.TargetControl = this.gunaPanel1;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(203, 36);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(125, 30);
+            this.gunaLabel1.TabIndex = 2;
+            this.gunaLabel1.Text = "Grand Hotel";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.Location = new System.Drawing.Point(203, 85);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(155, 37);
+            this.gunaLabel2.TabIndex = 3;
+            this.gunaLabel2.Text = "Front Office";
+            // 
+            // gunaButton10
+            // 
+            this.gunaButton10.Animated = true;
+            this.gunaButton10.AnimationHoverSpeed = 0.07F;
+            this.gunaButton10.AnimationSpeed = 0.03F;
+            this.gunaButton10.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton10.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton10.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton10.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton10.ForeColor = System.Drawing.Color.White;
+            this.gunaButton10.Image = global::Aplikasi_TiketKeun.Properties.Resources.product;
+            this.gunaButton10.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton10.Location = new System.Drawing.Point(0, 337);
+            this.gunaButton10.Name = "gunaButton10";
+            this.gunaButton10.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton10.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton10.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton10.OnHoverImage = null;
+            this.gunaButton10.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton10.Size = new System.Drawing.Size(197, 42);
+            this.gunaButton10.TabIndex = 13;
+            this.gunaButton10.Text = "Master Item";
+            // 
+            // gunaButton9
+            // 
+            this.gunaButton9.Animated = true;
+            this.gunaButton9.AnimationHoverSpeed = 0.07F;
+            this.gunaButton9.AnimationSpeed = 0.03F;
+            this.gunaButton9.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton9.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton9.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton9.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton9.ForeColor = System.Drawing.Color.White;
+            this.gunaButton9.Image = global::Aplikasi_TiketKeun.Properties.Resources.living_room;
+            this.gunaButton9.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton9.Location = new System.Drawing.Point(0, 288);
+            this.gunaButton9.Name = "gunaButton9";
+            this.gunaButton9.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton9.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton9.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton9.OnHoverImage = null;
+            this.gunaButton9.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton9.Size = new System.Drawing.Size(197, 42);
+            this.gunaButton9.TabIndex = 12;
+            this.gunaButton9.Text = "Master Room";
+            // 
+            // gunaButton8
+            // 
+            this.gunaButton8.Animated = true;
+            this.gunaButton8.AnimationHoverSpeed = 0.07F;
+            this.gunaButton8.AnimationSpeed = 0.03F;
+            this.gunaButton8.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton8.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton8.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton8.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton8.ForeColor = System.Drawing.Color.White;
+            this.gunaButton8.Image = global::Aplikasi_TiketKeun.Properties.Resources.room;
+            this.gunaButton8.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton8.Location = new System.Drawing.Point(0, 242);
+            this.gunaButton8.Name = "gunaButton8";
+            this.gunaButton8.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton8.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton8.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton8.OnHoverImage = null;
+            this.gunaButton8.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton8.Size = new System.Drawing.Size(197, 42);
+            this.gunaButton8.TabIndex = 11;
+            this.gunaButton8.Text = "Master Room Type";
+            // 
+            // gunaButton7
+            // 
+            this.gunaButton7.Animated = true;
+            this.gunaButton7.AnimationHoverSpeed = 0.07F;
+            this.gunaButton7.AnimationSpeed = 0.03F;
+            this.gunaButton7.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton7.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton7.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton7.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton7.ForeColor = System.Drawing.Color.White;
+            this.gunaButton7.Image = global::Aplikasi_TiketKeun.Properties.Resources.logout;
+            this.gunaButton7.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton7.Location = new System.Drawing.Point(0, 196);
+            this.gunaButton7.Name = "gunaButton7";
+            this.gunaButton7.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton7.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton7.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton7.OnHoverImage = null;
+            this.gunaButton7.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton7.Size = new System.Drawing.Size(197, 42);
+            this.gunaButton7.TabIndex = 10;
+            this.gunaButton7.Text = "Check Out";
+            // 
+            // gunaButton6
+            // 
+            this.gunaButton6.Animated = true;
+            this.gunaButton6.AnimationHoverSpeed = 0.07F;
+            this.gunaButton6.AnimationSpeed = 0.03F;
+            this.gunaButton6.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton6.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton6.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton6.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton6.ForeColor = System.Drawing.Color.White;
+            this.gunaButton6.Image = global::Aplikasi_TiketKeun.Properties.Resources.request;
+            this.gunaButton6.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton6.Location = new System.Drawing.Point(0, 149);
+            this.gunaButton6.Name = "gunaButton6";
+            this.gunaButton6.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton6.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton6.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton6.OnHoverImage = null;
+            this.gunaButton6.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton6.Size = new System.Drawing.Size(195, 42);
+            this.gunaButton6.TabIndex = 9;
+            this.gunaButton6.Text = "Request Additional Items";
             // 
             // gunaButton5
             // 
@@ -143,10 +297,9 @@ namespace Aplikasi_TiketKeun
             this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton5.OnHoverImage = null;
             this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton5.Size = new System.Drawing.Size(182, 42);
+            this.gunaButton5.Size = new System.Drawing.Size(194, 42);
             this.gunaButton5.TabIndex = 8;
             this.gunaButton5.Text = "Tentang";
-            this.gunaButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton5.Click += new System.EventHandler(this.gunaButton5_Click);
             // 
             // gunaButton1
@@ -160,7 +313,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
             this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = global::Aplikasi_TiketKeun.Properties.Resources.train;
+            this.gunaButton1.Image = global::Aplikasi_TiketKeun.Properties.Resources.log_in;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton1.Location = new System.Drawing.Point(0, 100);
             this.gunaButton1.Name = "gunaButton1";
@@ -169,10 +322,9 @@ namespace Aplikasi_TiketKeun
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(182, 42);
+            this.gunaButton1.Size = new System.Drawing.Size(197, 42);
             this.gunaButton1.TabIndex = 7;
-            this.gunaButton1.Text = "Tiket Kereta";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Text = "Check In";
             // 
             // gunaButton3
             // 
@@ -185,7 +337,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
             this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = global::Aplikasi_TiketKeun.Properties.Resources.airplane__2_;
+            this.gunaButton3.Image = global::Aplikasi_TiketKeun.Properties.Resources.calendar;
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton3.Location = new System.Drawing.Point(0, 52);
             this.gunaButton3.Name = "gunaButton3";
@@ -194,25 +346,55 @@ namespace Aplikasi_TiketKeun
             this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton3.OnHoverImage = null;
             this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(182, 42);
+            this.gunaButton3.Size = new System.Drawing.Size(194, 42);
             this.gunaButton3.TabIndex = 6;
-            this.gunaButton3.Text = "Tiket Pesawat";
-            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton3.Text = "Reservation";
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            // 
+            // gunaButton11
+            // 
+            this.gunaButton11.Animated = true;
+            this.gunaButton11.AnimationHoverSpeed = 0.07F;
+            this.gunaButton11.AnimationSpeed = 0.03F;
+            this.gunaButton11.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton11.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton11.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton11.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton11.ForeColor = System.Drawing.Color.White;
+            this.gunaButton11.Image = global::Aplikasi_TiketKeun.Properties.Resources.product;
+            this.gunaButton11.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton11.Location = new System.Drawing.Point(0, 385);
+            this.gunaButton11.Name = "gunaButton11";
+            this.gunaButton11.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton11.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton11.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton11.OnHoverImage = null;
+            this.gunaButton11.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton11.Size = new System.Drawing.Size(197, 42);
+            this.gunaButton11.TabIndex = 14;
+            this.gunaButton11.Text = "House Keeper";
+            this.gunaButton11.Click += new System.EventHandler(this.gunaButton11_Click);
             // 
             // Beranda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 585);
+            this.Controls.Add(this.gunaLabel2);
+            this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.gunaPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Beranda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beranda";
+            this.Load += new System.EventHandler(this.Beranda_Load);
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -226,5 +408,13 @@ namespace Aplikasi_TiketKeun
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaButton gunaButton3;
         private Guna.UI.WinForms.GunaButton gunaButton5;
+        private Guna.UI.WinForms.GunaButton gunaButton10;
+        private Guna.UI.WinForms.GunaButton gunaButton9;
+        private Guna.UI.WinForms.GunaButton gunaButton8;
+        private Guna.UI.WinForms.GunaButton gunaButton7;
+        private Guna.UI.WinForms.GunaButton gunaButton6;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaButton gunaButton11;
     }
 }

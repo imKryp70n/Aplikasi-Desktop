@@ -32,9 +32,11 @@ namespace Aplikasi_TiketKeun
             this.components = new System.ComponentModel.Container();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinkLabel2 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
@@ -46,10 +48,8 @@ namespace Aplikasi_TiketKeun
             this.UsernameBox = new Guna.UI.WinForms.GunaLineTextBox();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaAnimateWindow1 = new Guna.UI.WinForms.GunaAnimateWindow(this.components);
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,6 +92,17 @@ namespace Aplikasi_TiketKeun
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(651, 34);
             this.panel1.TabIndex = 1;
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel4.Location = new System.Drawing.Point(9, 7);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(192, 21);
+            this.gunaLabel4.TabIndex = 7;
+            this.gunaLabel4.Text = "Aplikasi TiketKeun ( BETA )";
             // 
             // gunaButton4
             // 
@@ -163,6 +174,16 @@ namespace Aplikasi_TiketKeun
             this.panel2.Size = new System.Drawing.Size(292, 384);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // gunaLabel5
+            // 
+            this.gunaLabel5.AutoSize = true;
+            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel5.Location = new System.Drawing.Point(56, 62);
+            this.gunaLabel5.Name = "gunaLabel5";
+            this.gunaLabel5.Size = new System.Drawing.Size(179, 17);
+            this.gunaLabel5.TabIndex = 9;
+            this.gunaLabel5.Text = "Silahkan login terlebih dahulu";
             // 
             // gunaLinkLabel2
             // 
@@ -247,7 +268,7 @@ namespace Aplikasi_TiketKeun
             // PasswordBox
             // 
             this.PasswordBox.Animated = true;
-            this.PasswordBox.BackColor = System.Drawing.SystemColors.Control;
+            this.PasswordBox.BackColor = System.Drawing.Color.White;
             this.PasswordBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.PasswordBox.FocusedLineColor = System.Drawing.Color.DodgerBlue;
             this.PasswordBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,6 +279,7 @@ namespace Aplikasi_TiketKeun
             this.PasswordBox.SelectedText = "";
             this.PasswordBox.Size = new System.Drawing.Size(200, 30);
             this.PasswordBox.TabIndex = 2;
+            this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
             // UsernameLBL
             // 
@@ -273,7 +295,7 @@ namespace Aplikasi_TiketKeun
             // UsernameBox
             // 
             this.UsernameBox.Animated = true;
-            this.UsernameBox.BackColor = System.Drawing.SystemColors.Control;
+            this.UsernameBox.BackColor = System.Drawing.Color.White;
             this.UsernameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.UsernameBox.FocusedLineColor = System.Drawing.Color.DodgerBlue;
             this.UsernameBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,17 +316,6 @@ namespace Aplikasi_TiketKeun
             this.gunaElipse1.Radius = 3;
             this.gunaElipse1.TargetControl = this;
             // 
-            // gunaLabel4
-            // 
-            this.gunaLabel4.AutoSize = true;
-            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel4.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel4.Location = new System.Drawing.Point(9, 7);
-            this.gunaLabel4.Name = "gunaLabel4";
-            this.gunaLabel4.Size = new System.Drawing.Size(192, 21);
-            this.gunaLabel4.TabIndex = 7;
-            this.gunaLabel4.Text = "Aplikasi TiketKeun ( BETA )";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Aplikasi_TiketKeun.Properties.Resources.login;
@@ -321,20 +332,11 @@ namespace Aplikasi_TiketKeun
             this.gunaAnimateWindow1.Interval = 100;
             this.gunaAnimateWindow1.TargetControl = this;
             // 
-            // gunaLabel5
-            // 
-            this.gunaLabel5.AutoSize = true;
-            this.gunaLabel5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel5.Location = new System.Drawing.Point(56, 62);
-            this.gunaLabel5.Name = "gunaLabel5";
-            this.gunaLabel5.Size = new System.Drawing.Size(179, 17);
-            this.gunaLabel5.TabIndex = 9;
-            this.gunaLabel5.Text = "Silahkan login terlebih dahulu";
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(651, 418);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);

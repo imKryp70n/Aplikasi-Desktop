@@ -28,3 +28,34 @@ C:\Users\AxxelXD\source\repos\Aplikasi TiketKeun\obj\Debug\Aplikasi_TiketKeun.Lo
 C:\Users\AxxelXD\source\repos\Aplikasi TiketKeun\obj\Debug\Aplikasi_TiketKeun.Beranda.resources
 C:\Users\AxxelXD\source\repos\Aplikasi TiketKeun\obj\Debug\Aplikasi_TiketKeun.About.resources
 C:\Users\AxxelXD\source\repos\Aplikasi TiketKeun\obj\Debug\Aplikasi_TiketKeun.Register.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\Aplikasi TiketKeun.exe.config
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\Aplikasi TiketKeun.exe
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\Aplikasi TiketKeun.pdb
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\MySql.Data.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\MySql.Data.EntityFramework.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\Google.Protobuf.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\ZstdNet.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\System.Memory.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\System.Buffers.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\MySql.Data.xml
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.csproj.AssemblyReference.cache
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.exe.config
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.About.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.Beranda.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.Login.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.Properties.Resources.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.Register.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.csproj.GenerateResource.cache
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.csproj.CoreCompileInputs.cache
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.csproj.CopyComplete
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.exe
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.pdb
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.HouseKeeperSupervisor.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.HouseKeeper.resources

@@ -40,5 +40,21 @@ namespace Aplikasi_TiketKeun
         {
             new About().Show();
         }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Beranda_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void gunaButton11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new HouseKeeperSupervisor().Show();
+        }
     }
 }

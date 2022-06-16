@@ -67,6 +67,23 @@
       <DependentUpon>Beranda.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="db_winDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_winDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeper.Designer.cs">
+      <DependentUpon>HouseKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HouseKeeperSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseKeeperSupervisor.Designer.cs">
+      <DependentUpon>HouseKeeperSupervisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +104,12 @@
     <EmbeddedResource Include="Beranda.resx">
       <DependentUpon>Beranda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeper.resx">
+      <DependentUpon>HouseKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HouseKeeperSupervisor.resx">
+      <DependentUpon>HouseKeeperSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +126,17 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="db_winDataSet.xsc">
+      <DependentUpon>db_winDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_winDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_winDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_winDataSet.xss">
+      <DependentUpon>db_winDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +167,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\living-room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

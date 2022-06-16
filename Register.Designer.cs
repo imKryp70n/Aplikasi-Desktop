@@ -29,6 +29,7 @@ namespace Aplikasi_TiketKeun
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
@@ -45,6 +46,14 @@ namespace Aplikasi_TiketKeun
             this.AlamatBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaCheckBox1 = new Guna.UI.WinForms.GunaCheckBox();
+            this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
+            this.DateBox = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.CodeBox = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
+            this.PekerjaanCBox = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,7 +260,7 @@ namespace Aplikasi_TiketKeun
             this.AlamatBox.FocusedBorderColor = System.Drawing.Color.DodgerBlue;
             this.AlamatBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.AlamatBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AlamatBox.Location = new System.Drawing.Point(201, 224);
+            this.AlamatBox.Location = new System.Drawing.Point(201, 225);
             this.AlamatBox.Name = "AlamatBox";
             this.AlamatBox.PasswordChar = '\0';
             this.AlamatBox.SelectedText = "";
@@ -271,7 +280,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(201, 295);
+            this.gunaButton1.Location = new System.Drawing.Point(201, 432);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -291,17 +300,148 @@ namespace Aplikasi_TiketKeun
             this.gunaCheckBox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaCheckBox1.FillColor = System.Drawing.Color.White;
             this.gunaCheckBox1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.gunaCheckBox1.Location = new System.Drawing.Point(201, 265);
+            this.gunaCheckBox1.Location = new System.Drawing.Point(201, 402);
             this.gunaCheckBox1.Name = "gunaCheckBox1";
             this.gunaCheckBox1.Size = new System.Drawing.Size(137, 20);
             this.gunaCheckBox1.TabIndex = 14;
             this.gunaCheckBox1.Text = "Syarat dan ketentuan";
             // 
+            // gunaLabel7
+            // 
+            this.gunaLabel7.AutoSize = true;
+            this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel7.Location = new System.Drawing.Point(34, 267);
+            this.gunaLabel7.Name = "gunaLabel7";
+            this.gunaLabel7.Size = new System.Drawing.Size(102, 21);
+            this.gunaLabel7.TabIndex = 15;
+            this.gunaLabel7.Text = "Tanggal Lahir";
+            // 
+            // DateBox
+            // 
+            this.DateBox.BaseColor = System.Drawing.Color.White;
+            this.DateBox.BorderColor = System.Drawing.Color.Silver;
+            this.DateBox.CustomFormat = null;
+            this.DateBox.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.DateBox.FocusedColor = System.Drawing.Color.DodgerBlue;
+            this.DateBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DateBox.ForeColor = System.Drawing.Color.Black;
+            this.DateBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateBox.Location = new System.Drawing.Point(201, 262);
+            this.DateBox.MaxDate = new System.DateTime(2022, 6, 16, 0, 0, 0, 0);
+            this.DateBox.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.DateBox.Name = "DateBox";
+            this.DateBox.OnHoverBaseColor = System.Drawing.Color.White;
+            this.DateBox.OnHoverBorderColor = System.Drawing.Color.DodgerBlue;
+            this.DateBox.OnHoverForeColor = System.Drawing.Color.Black;
+            this.DateBox.OnPressedColor = System.Drawing.Color.Black;
+            this.DateBox.Size = new System.Drawing.Size(352, 30);
+            this.DateBox.TabIndex = 16;
+            this.DateBox.Text = "16/06/2022";
+            this.DateBox.Value = new System.DateTime(2022, 6, 16, 0, 0, 0, 0);
+            // 
+            // CodeBox
+            // 
+            this.CodeBox.BaseColor = System.Drawing.Color.White;
+            this.CodeBox.BorderColor = System.Drawing.Color.Silver;
+            this.CodeBox.BorderSize = 1;
+            this.CodeBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CodeBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.CodeBox.FocusedBorderColor = System.Drawing.Color.DodgerBlue;
+            this.CodeBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.CodeBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CodeBox.Location = new System.Drawing.Point(201, 298);
+            this.CodeBox.Name = "CodeBox";
+            this.CodeBox.PasswordChar = '\0';
+            this.CodeBox.SelectedText = "";
+            this.CodeBox.Size = new System.Drawing.Size(319, 30);
+            this.CodeBox.TabIndex = 17;
+            // 
+            // gunaLabel8
+            // 
+            this.gunaLabel8.AutoSize = true;
+            this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel8.Location = new System.Drawing.Point(34, 304);
+            this.gunaLabel8.Name = "gunaLabel8";
+            this.gunaLabel8.Size = new System.Drawing.Size(117, 21);
+            this.gunaLabel8.TabIndex = 18;
+            this.gunaLabel8.Text = "Kode Registrasi";
+            // 
+            // PekerjaanCBox
+            // 
+            this.PekerjaanCBox.BackColor = System.Drawing.Color.Transparent;
+            this.PekerjaanCBox.BaseColor = System.Drawing.Color.White;
+            this.PekerjaanCBox.BorderColor = System.Drawing.Color.Silver;
+            this.PekerjaanCBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.PekerjaanCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PekerjaanCBox.FocusedColor = System.Drawing.Color.Empty;
+            this.PekerjaanCBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.PekerjaanCBox.ForeColor = System.Drawing.Color.Black;
+            this.PekerjaanCBox.FormattingEnabled = true;
+            this.PekerjaanCBox.Items.AddRange(new object[] {
+            "Admin",
+            "House Keeper Supervisor",
+            "House Keeper"});
+            this.PekerjaanCBox.Location = new System.Drawing.Point(201, 338);
+            this.PekerjaanCBox.Name = "PekerjaanCBox";
+            this.PekerjaanCBox.OnHoverItemBaseColor = System.Drawing.Color.DodgerBlue;
+            this.PekerjaanCBox.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.PekerjaanCBox.Size = new System.Drawing.Size(352, 26);
+            this.PekerjaanCBox.TabIndex = 20;
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel9.Location = new System.Drawing.Point(34, 342);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(77, 21);
+            this.gunaLabel9.TabIndex = 21;
+            this.gunaLabel9.Text = "Pekerjaan";
+            // 
+            // gunaDragControl1
+            // 
+            this.gunaDragControl1.TargetControl = this.panel1;
+            // 
+            // gunaButton3
+            // 
+            this.gunaButton3.Animated = true;
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BaseColor = System.Drawing.Color.White;
+            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaButton3.Image = global::Aplikasi_TiketKeun.Properties.Resources.question;
+            this.gunaButton3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton3.Location = new System.Drawing.Point(526, 298);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = null;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton3.OnPressedDepth = 100;
+            this.gunaButton3.Size = new System.Drawing.Size(27, 28);
+            this.gunaButton3.TabIndex = 19;
+            this.gunaButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 362);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(588, 500);
+            this.Controls.Add(this.gunaLabel9);
+            this.Controls.Add(this.PekerjaanCBox);
+            this.Controls.Add(this.gunaButton3);
+            this.Controls.Add(this.gunaLabel8);
+            this.Controls.Add(this.CodeBox);
+            this.Controls.Add(this.DateBox);
+            this.Controls.Add(this.gunaLabel7);
             this.Controls.Add(this.gunaCheckBox1);
             this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.AlamatBox);
@@ -344,5 +484,13 @@ namespace Aplikasi_TiketKeun
         private Guna.UI.WinForms.GunaTextBox AlamatBox;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private Guna.UI.WinForms.GunaCheckBox gunaCheckBox1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel7;
+        private Guna.UI.WinForms.GunaDateTimePicker DateBox;
+        private Guna.UI.WinForms.GunaTextBox CodeBox;
+        private Guna.UI.WinForms.GunaLabel gunaLabel8;
+        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Guna.UI.WinForms.GunaComboBox PekerjaanCBox;
+        private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
     }
 }
