@@ -98,6 +98,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\Reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForm\Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="db_winDataSet.xsc">
       <DependentUpon>db_winDataSet.xsd</DependentUpon>
@@ -192,5 +201,6 @@
   <ItemGroup>
     <None Include="Resources\product.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

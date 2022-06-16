@@ -37,6 +37,7 @@ namespace Aplikasi_TiketKeun
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.reservation1 = new Aplikasi_TiketKeun.WinForm.Reservation();
             this.gunaButton11 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton10 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
@@ -158,6 +159,13 @@ namespace Aplikasi_TiketKeun
             this.gunaLabel2.TabIndex = 3;
             this.gunaLabel2.Text = "Front Office";
             // 
+            // reservation1
+            // 
+            this.reservation1.Location = new System.Drawing.Point(197, 33);
+            this.reservation1.Name = "reservation1";
+            this.reservation1.Size = new System.Drawing.Size(793, 552);
+            this.reservation1.TabIndex = 4;
+            // 
             // gunaButton11
             // 
             this.gunaButton11.Animated = true;
@@ -180,7 +188,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton11.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton11.Size = new System.Drawing.Size(197, 42);
             this.gunaButton11.TabIndex = 14;
-            this.gunaButton11.Text = "House Keeper";
+            this.gunaButton11.Text = "Master Employee";
             this.gunaButton11.Click += new System.EventHandler(this.gunaButton11_Click);
             // 
             // gunaButton10
@@ -384,6 +392,7 @@ namespace Aplikasi_TiketKeun
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 585);
+            this.Controls.Add(this.reservation1);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaPanel2);
@@ -418,5 +427,6 @@ namespace Aplikasi_TiketKeun
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaButton gunaButton11;
+        private WinForm.Reservation reservation1;
     }
 }

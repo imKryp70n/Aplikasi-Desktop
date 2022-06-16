@@ -99,5 +99,10 @@ namespace Aplikasi_TiketKeun
         {
             MessageBox.Show("Mintalah kode kepada admin.", "Tiketkeun", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

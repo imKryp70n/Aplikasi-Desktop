@@ -43,12 +43,12 @@ namespace Aplikasi_TiketKeun
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
-            
+            new WinForm.Reservation().Show();
         }
 
         private void Beranda_Load(object sender, EventArgs e)
         {
-            
+            new WinForm.Reservation().Hide();
         }
 
         private void gunaButton11_Click(object sender, EventArgs e)
@@ -65,6 +65,11 @@ namespace Aplikasi_TiketKeun
         private void gunaButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunaButton12_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

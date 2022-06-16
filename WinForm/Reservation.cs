@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Aplikasi_TiketKeun.WinForm
 {
-    public partial class Reservation : Form
+    public partial class Reservation : UserControl
     {
         public Reservation()
         {

@@ -59,3 +59,4 @@ C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketK
 C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.pdb
 C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.HouseKeeperSupervisor.resources
 C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.HouseKeeper.resources
+C:\Users\BARA ENTERPRISE\source\repos\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.Reservation.resources
