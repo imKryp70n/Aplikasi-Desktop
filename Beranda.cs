@@ -56,5 +56,15 @@ namespace Aplikasi_TiketKeun
             this.Hide();
             new HouseKeeperSupervisor().Show();
         }
+
+        private void gunaPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace Aplikasi_TiketKeun
             string query = "SELECT * FROM employee where JobID=3";
             MySqlCommand cmd = new MySqlCommand(query,conn);
             DataTable table = new DataTable();
-            MySqlDataAdapter DA = new MySqlDataAdapter("SELECT * FROM cleaningroomdetail",conn);
+            MySqlDataAdapter DA = new MySqlDataAdapter("SELECT * FROM cleaningroom ",conn);
             DA.Fill(table);
             dataGridView1.DataSource = table;
             MySqlDataReader row;

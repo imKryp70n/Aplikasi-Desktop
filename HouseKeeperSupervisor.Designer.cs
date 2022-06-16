@@ -49,6 +49,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,7 +66,7 @@ namespace Aplikasi_TiketKeun
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel2.Location = new System.Drawing.Point(0, 33);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(217, 388);
+            this.gunaPanel2.Size = new System.Drawing.Size(217, 486);
             this.gunaPanel2.TabIndex = 3;
             // 
             // gunaPanel1
@@ -144,6 +145,7 @@ namespace Aplikasi_TiketKeun
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gunaButton1);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.gunaComboBox2);
             this.panel1.Controls.Add(this.label5);
@@ -155,7 +157,7 @@ namespace Aplikasi_TiketKeun
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(217, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 388);
+            this.panel1.Size = new System.Drawing.Size(630, 486);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -292,7 +294,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton5.OnHoverImage = null;
             this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton5.Size = new System.Drawing.Size(194, 42);
+            this.gunaButton5.Size = new System.Drawing.Size(217, 42);
             this.gunaButton5.TabIndex = 8;
             this.gunaButton5.Text = "Tentang";
             // 
@@ -325,17 +327,42 @@ namespace Aplikasi_TiketKeun
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(74, 244);
+            this.dataGridView1.Location = new System.Drawing.Point(74, 306);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(462, 131);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.Animated = true;
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(342, 239);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(194, 42);
+            this.gunaButton1.TabIndex = 9;
+            this.gunaButton1.Text = "Tambahkan";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // HouseKeeperSupervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(847, 421);
+            this.ClientSize = new System.Drawing.Size(847, 519);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gunaPanel2);
@@ -378,5 +405,6 @@ namespace Aplikasi_TiketKeun
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }
