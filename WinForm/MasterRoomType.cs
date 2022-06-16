@@ -11,32 +11,26 @@ using System.Windows.Forms;
 
 namespace Aplikasi_TiketKeun.WinForm
 {
-    public partial class Reservation : UserControl
+    public partial class MasterRoomType : UserControl
     {
-        public Reservation()
+        public MasterRoomType()
         {
             InitializeComponent();
         }
         string SQLConn = "server=localhost;user id=root;database=db_win;sslmode=Disabled";
-
-        private void gunaRadioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Reservation_Load(object sender, EventArgs e)
+        private void MasterRoomType_Load(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(SQLConn);
             try
             {
                 conn.Open();
-                string Query = "SELECT RoomNumber, RoomFloor, Description FROM room";
+                string Query = "SELECT Name, Capacity, RoomPrice FROM roomtype";
                 DataTable Table = new DataTable();
-                MySqlDataAdapter DA = new MySqlDataAdapter(Query,conn);
+                MySqlDataAdapter DA = new MySqlDataAdapter(Query, conn);
                 DA.Fill(Table);
                 dataGridView1.DataSource = Table;
 
-        
+
             }
             catch (Exception ex)
             {

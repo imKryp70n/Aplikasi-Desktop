@@ -75,5 +75,10 @@ namespace Aplikasi_TiketKeun
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

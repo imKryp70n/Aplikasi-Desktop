@@ -35,9 +35,8 @@ namespace Aplikasi_TiketKeun
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.reservation1 = new Aplikasi_TiketKeun.WinForm.Reservation();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton11 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton10 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton9 = new Guna.UI.WinForms.GunaButton();
@@ -46,14 +45,18 @@ namespace Aplikasi_TiketKeun
             this.gunaButton6 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            this.ReservationBTN = new Guna.UI.WinForms.GunaButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.gunaPanel1.Controls.Add(this.gunaLabel4);
             this.gunaPanel1.Controls.Add(this.gunaButton4);
             this.gunaPanel1.Controls.Add(this.gunaButton2);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -127,7 +130,7 @@ namespace Aplikasi_TiketKeun
             this.gunaPanel2.Controls.Add(this.gunaButton6);
             this.gunaPanel2.Controls.Add(this.gunaButton5);
             this.gunaPanel2.Controls.Add(this.gunaButton1);
-            this.gunaPanel2.Controls.Add(this.gunaButton3);
+            this.gunaPanel2.Controls.Add(this.ReservationBTN);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel2.Location = new System.Drawing.Point(0, 33);
             this.gunaPanel2.Name = "gunaPanel2";
@@ -139,32 +142,25 @@ namespace Aplikasi_TiketKeun
             // 
             this.gunaDragControl1.TargetControl = this.gunaPanel1;
             // 
-            // gunaLabel1
+            // panel1
             // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.Location = new System.Drawing.Point(203, 36);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(125, 30);
-            this.gunaLabel1.TabIndex = 2;
-            this.gunaLabel1.Text = "Grand Hotel";
+            this.panel1.Controls.Add(this.gunaPictureBox1);
+            this.panel1.Location = new System.Drawing.Point(198, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(789, 552);
+            this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // gunaLabel2
+            // gunaLabel4
             // 
-            this.gunaLabel2.AutoSize = true;
-            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel2.Location = new System.Drawing.Point(203, 85);
-            this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(155, 37);
-            this.gunaLabel2.TabIndex = 3;
-            this.gunaLabel2.Text = "Front Office";
-            // 
-            // reservation1
-            // 
-            this.reservation1.Location = new System.Drawing.Point(197, 33);
-            this.reservation1.Name = "reservation1";
-            this.reservation1.Size = new System.Drawing.Size(793, 552);
-            this.reservation1.TabIndex = 4;
+            this.gunaLabel4.AutoSize = true;
+            this.gunaLabel4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel4.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel4.Location = new System.Drawing.Point(3, 7);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(420, 21);
+            this.gunaLabel4.TabIndex = 15;
+            this.gunaLabel4.Text = "Aplikasi TiketKeun ( ALPHA ) https://github.com/imkryp70n";
             // 
             // gunaButton11
             // 
@@ -177,7 +173,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton11.FocusedColor = System.Drawing.Color.Empty;
             this.gunaButton11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton11.ForeColor = System.Drawing.Color.White;
-            this.gunaButton11.Image = global::Aplikasi_TiketKeun.Properties.Resources.product;
+            this.gunaButton11.Image = global::Aplikasi_TiketKeun.Properties.Resources.personal;
             this.gunaButton11.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton11.Location = new System.Drawing.Point(0, 385);
             this.gunaButton11.Name = "gunaButton11";
@@ -238,6 +234,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton9.Size = new System.Drawing.Size(197, 42);
             this.gunaButton9.TabIndex = 12;
             this.gunaButton9.Text = "Master Room";
+            this.gunaButton9.Click += new System.EventHandler(this.gunaButton9_Click);
             // 
             // gunaButton8
             // 
@@ -262,6 +259,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton8.Size = new System.Drawing.Size(197, 42);
             this.gunaButton8.TabIndex = 11;
             this.gunaButton8.Text = "Master Room Type";
+            this.gunaButton8.Click += new System.EventHandler(this.gunaButton8_Click);
             // 
             // gunaButton7
             // 
@@ -361,30 +359,41 @@ namespace Aplikasi_TiketKeun
             this.gunaButton1.Text = "Check In";
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
-            // gunaButton3
+            // ReservationBTN
             // 
-            this.gunaButton3.Animated = true;
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = global::Aplikasi_TiketKeun.Properties.Resources.calendar;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(0, 52);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(194, 42);
-            this.gunaButton3.TabIndex = 6;
-            this.gunaButton3.Text = "Reservation";
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
+            this.ReservationBTN.Animated = true;
+            this.ReservationBTN.AnimationHoverSpeed = 0.07F;
+            this.ReservationBTN.AnimationSpeed = 0.03F;
+            this.ReservationBTN.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.ReservationBTN.BorderColor = System.Drawing.Color.Black;
+            this.ReservationBTN.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ReservationBTN.FocusedColor = System.Drawing.Color.Empty;
+            this.ReservationBTN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReservationBTN.ForeColor = System.Drawing.Color.White;
+            this.ReservationBTN.Image = global::Aplikasi_TiketKeun.Properties.Resources.calendar;
+            this.ReservationBTN.ImageSize = new System.Drawing.Size(20, 20);
+            this.ReservationBTN.Location = new System.Drawing.Point(0, 52);
+            this.ReservationBTN.Name = "ReservationBTN";
+            this.ReservationBTN.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.ReservationBTN.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.ReservationBTN.OnHoverForeColor = System.Drawing.Color.White;
+            this.ReservationBTN.OnHoverImage = null;
+            this.ReservationBTN.OnPressedColor = System.Drawing.Color.Black;
+            this.ReservationBTN.Size = new System.Drawing.Size(194, 42);
+            this.ReservationBTN.TabIndex = 6;
+            this.ReservationBTN.Text = "Reservation";
+            this.ReservationBTN.Click += new System.EventHandler(this.gunaButton3_Click);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BackgroundImage = global::Aplikasi_TiketKeun.Properties.Resources._3959915;
+            this.gunaPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(163, 119);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(497, 366);
+            this.gunaPictureBox1.TabIndex = 0;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // Beranda
             // 
@@ -392,20 +401,20 @@ namespace Aplikasi_TiketKeun
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 585);
-            this.Controls.Add(this.reservation1);
-            this.Controls.Add(this.gunaLabel2);
-            this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.gunaPanel1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Beranda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beranda";
             this.Load += new System.EventHandler(this.Beranda_Load);
             this.gunaPanel1.ResumeLayout(false);
+            this.gunaPanel1.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -417,16 +426,16 @@ namespace Aplikasi_TiketKeun
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
         private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
+        private Guna.UI.WinForms.GunaButton ReservationBTN;
         private Guna.UI.WinForms.GunaButton gunaButton5;
         private Guna.UI.WinForms.GunaButton gunaButton10;
         private Guna.UI.WinForms.GunaButton gunaButton9;
         private Guna.UI.WinForms.GunaButton gunaButton8;
         private Guna.UI.WinForms.GunaButton gunaButton7;
         private Guna.UI.WinForms.GunaButton gunaButton6;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaButton gunaButton11;
-        private WinForm.Reservation reservation1;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
     }
 }
