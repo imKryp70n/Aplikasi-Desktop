@@ -96,3 +96,5 @@ C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.CheckIn.resources
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterRoomType.resources
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterRoom.resources
+C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.RequestAdditionalItem.resources
+C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.CheckOut.resources

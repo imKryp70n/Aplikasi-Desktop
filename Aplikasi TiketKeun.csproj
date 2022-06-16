@@ -104,6 +104,12 @@
     <Compile Include="WinForm\CheckIn.Designer.cs">
       <DependentUpon>CheckIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\CheckOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForm\CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForm\MasterRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="WinForm\MasterRoomType.Designer.cs">
       <DependentUpon>MasterRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\RequestAdditionalItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForm\RequestAdditionalItem.Designer.cs">
+      <DependentUpon>RequestAdditionalItem.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForm\Reservation.cs">
       <SubType>UserControl</SubType>
@@ -153,11 +165,17 @@
     <EmbeddedResource Include="WinForm\CheckIn.resx">
       <DependentUpon>CheckIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinForm\MasterRoom.resx">
       <DependentUpon>MasterRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\MasterRoomType.resx">
       <DependentUpon>MasterRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\RequestAdditionalItem.resx">
+      <DependentUpon>RequestAdditionalItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>

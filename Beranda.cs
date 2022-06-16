@@ -96,5 +96,17 @@ namespace Aplikasi_TiketKeun
             WinForm.MasterRoom WF = new WinForm.MasterRoom();
             addUserControl(WF);
         }
+
+        private void gunaButton6_Click(object sender, EventArgs e)
+        {
+            WinForm.RequestAdditionalItem WF = new WinForm.RequestAdditionalItem();
+            addUserControl(WF);
+        }
+
+        private void gunaButton7_Click(object sender, EventArgs e)
+        {
+            WinForm.CheckOut WF = new WinForm.CheckOut();
+            addUserControl(WF);
+        }
     }
 }

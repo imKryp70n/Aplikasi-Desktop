@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 16, 2022 at 03:50 PM
+-- Host: localhost
+-- Generation Time: Jun 16, 2022 at 03:08 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -52,10 +52,10 @@ CREATE TABLE `cleaningroomdetail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cleaningroomiten`
+-- Table structure for table `cleaningroomitem`
 --
 
-CREATE TABLE `cleaningroomiten` (
+CREATE TABLE `cleaningroomitem` (
   `ID` int(11) NOT NULL,
   `CleaningRoomDetailID` int(11) NOT NULL,
   `ItemID` int(11) NOT NULL,
@@ -133,6 +133,17 @@ CREATE TABLE `itemstatus` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `job`
+--
+
+CREATE TABLE `job` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reservation`
 --
 
@@ -190,6 +201,33 @@ CREATE TABLE `reservation_request_item` (
   `TotalPrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE `room` (
+  `ID` int(11) NOT NULL,
+  `RoomTypeID` int(11) NOT NULL,
+  `RoomNumber` varchar(50) NOT NULL,
+  `RoomFloor` varchar(50) NOT NULL,
+  `Description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roomtype`
+--
+
+CREATE TABLE `roomtype` (
+  `ID` int(11) NOT NULL,
+  `Name` int(11) NOT NULL,
+  `Capacity` int(11) NOT NULL,
+  `RoomPrice` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -207,9 +245,9 @@ ALTER TABLE `cleaningroomdetail`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `cleaningroomiten`
+-- Indexes for table `cleaningroomitem`
 --
-ALTER TABLE `cleaningroomiten`
+ALTER TABLE `cleaningroomitem`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -222,6 +260,12 @@ ALTER TABLE `employee`
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `job`
+--
+ALTER TABLE `job`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -249,6 +293,18 @@ ALTER TABLE `reservation_request_item`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `roomtype`
+--
+ALTER TABLE `roomtype`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -265,9 +321,9 @@ ALTER TABLE `cleaningroomdetail`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `cleaningroomiten`
+-- AUTO_INCREMENT for table `cleaningroomitem`
 --
-ALTER TABLE `cleaningroomiten`
+ALTER TABLE `cleaningroomitem`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -280,6 +336,12 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `job`
+--
+ALTER TABLE `job`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -304,6 +366,18 @@ ALTER TABLE `reservationroom`
 -- AUTO_INCREMENT for table `reservation_request_item`
 --
 ALTER TABLE `reservation_request_item`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `room`
+--
+ALTER TABLE `room`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `roomtype`
+--
+ALTER TABLE `roomtype`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

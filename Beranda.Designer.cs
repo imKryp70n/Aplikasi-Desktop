@@ -284,6 +284,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton7.Size = new System.Drawing.Size(197, 42);
             this.gunaButton7.TabIndex = 10;
             this.gunaButton7.Text = "Check Out";
+            this.gunaButton7.Click += new System.EventHandler(this.gunaButton7_Click);
             // 
             // gunaButton6
             // 
@@ -308,6 +309,7 @@ namespace Aplikasi_TiketKeun
             this.gunaButton6.Size = new System.Drawing.Size(195, 42);
             this.gunaButton6.TabIndex = 9;
             this.gunaButton6.Text = "Request Additional Items";
+            this.gunaButton6.Click += new System.EventHandler(this.gunaButton6_Click);
             // 
             // gunaButton5
             // 
