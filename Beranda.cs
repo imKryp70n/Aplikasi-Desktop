@@ -108,5 +108,12 @@ namespace Aplikasi_TiketKeun
             WinForm.CheckOut WF = new WinForm.CheckOut();
             addUserControl(WF);
         }
+
+
+        private void gunaButton10_Click_1(object sender, EventArgs e)
+        {
+            WinForm.MasterItem WF = new WinForm.MasterItem();
+            addUserControl(WF);
+        }
     }
 }

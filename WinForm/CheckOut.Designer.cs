@@ -32,6 +32,8 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
             this.gunaComboBox2 = new Guna.UI.WinForms.GunaComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,8 +42,6 @@ namespace Aplikasi_TiketKeun.WinForm
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaComboBox3 = new Guna.UI.WinForms.GunaComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gunaGroupBox2.SuspendLayout();
@@ -56,7 +56,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.Controls.Add(this.gunaGroupBox2);
             this.gunaGroupBox1.Controls.Add(this.gunaButton1);
             this.gunaGroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGroupBox1.ForeColor = System.Drawing.Color.White;
+            this.gunaGroupBox1.ForeColor = System.Drawing.Color.Black;
             this.gunaGroupBox1.LineColor = System.Drawing.Color.DodgerBlue;
             this.gunaGroupBox1.Location = new System.Drawing.Point(3, 3);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
@@ -96,6 +96,34 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox2.TabIndex = 23;
             this.gunaGroupBox2.Text = "Detail";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
+            // 
+            // gunaComboBox3
+            // 
+            this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaComboBox3.BaseColor = System.Drawing.Color.White;
+            this.gunaComboBox3.BorderColor = System.Drawing.Color.Silver;
+            this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.gunaComboBox3.ForeColor = System.Drawing.Color.Black;
+            this.gunaComboBox3.FormattingEnabled = true;
+            this.gunaComboBox3.Location = new System.Drawing.Point(270, 145);
+            this.gunaComboBox3.Name = "gunaComboBox3";
+            this.gunaComboBox3.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaComboBox3.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.gunaComboBox3.Size = new System.Drawing.Size(333, 26);
+            this.gunaComboBox3.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(120, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 21);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Item Status";
             // 
             // gunaComboBox1
             // 
@@ -230,41 +258,13 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaButton1.Text = "Bayar";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaComboBox3
-            // 
-            this.gunaComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox3.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox3.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox3.FormattingEnabled = true;
-            this.gunaComboBox3.Location = new System.Drawing.Point(270, 145);
-            this.gunaComboBox3.Name = "gunaComboBox3";
-            this.gunaComboBox3.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox3.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox3.Size = new System.Drawing.Size(333, 26);
-            this.gunaComboBox3.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(120, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 21);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Item Status";
-            // 
             // CheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaGroupBox1);
             this.Name = "CheckOut";
-            this.Size = new System.Drawing.Size(793, 552);
+            this.Size = new System.Drawing.Size(793, 654);
             this.gunaGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gunaGroupBox2.ResumeLayout(false);

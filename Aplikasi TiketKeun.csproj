@@ -110,6 +110,18 @@
     <Compile Include="WinForm\CheckOut.Designer.cs">
       <DependentUpon>CheckOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\DeleteForm\DeleteItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\DeleteForm\DeleteItem.Designer.cs">
+      <DependentUpon>DeleteItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\MasterItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForm\MasterItem.Designer.cs">
+      <DependentUpon>MasterItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForm\MasterRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\CheckOut.resx">
       <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\DeleteForm\DeleteItem.resx">
+      <DependentUpon>DeleteItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\MasterItem.resx">
+      <DependentUpon>MasterItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\MasterRoom.resx">
       <DependentUpon>MasterRoom.cs</DependentUpon>
