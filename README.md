@@ -38,9 +38,6 @@ Please contact : joemusicamv12@gmail.com
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
-
+jangan di jual coy
 
     
