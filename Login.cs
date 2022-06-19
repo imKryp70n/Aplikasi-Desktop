@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -94,6 +95,8 @@ namespace Aplikasi_TiketKeun
                         {
                             MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
+                            Thread.Sleep(3000);
+
                             new Beranda().Show();
 
                         }

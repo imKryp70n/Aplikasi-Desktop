@@ -146,6 +146,12 @@
     <Compile Include="WinForm\Reservation.Designer.cs">
       <DependentUpon>Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\UserEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WinForm\UserEmployee.Designer.cs">
+      <DependentUpon>UserEmployee.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\UserEmployee.resx">
+      <DependentUpon>UserEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="db_winDataSet.xsc">
       <DependentUpon>db_winDataSet.xsd</DependentUpon>

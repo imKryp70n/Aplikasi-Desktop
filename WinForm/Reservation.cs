@@ -23,16 +23,19 @@ namespace Aplikasi_TiketKeun.WinForm
         {
 
         }
-        int a;
+        
         private void Reservation_Load(object sender, EventArgs e)
         {
+            
             MySqlConnection conn = new MySqlConnection(SQLConn);
             try
             {
+                // -------------------------- MEMUAT DATA RUANGAN -------------------------------
+
                 conn.Open();
                 string Query = "SELECT RoomNumber, RoomFloor, Description FROM room";
                 string QRoomType = "SELECT * FROM roomtype";
-
+                string QItem = "SELECT Name FROM item";
                 MySqlCommand cmd = new MySqlCommand(Query, conn);
 
                 DataTable Table = new DataTable();
@@ -40,6 +43,9 @@ namespace Aplikasi_TiketKeun.WinForm
                 DA.Fill(Table);
                 dataGridView1.DataSource = Table;
                 conn.Close();
+
+                // --------------------------- MEMUAT DATA TIPE RUANGAN ------------------------------
+                
                 conn.Open();
                 MySqlCommand cmdRoomType = new MySqlCommand(QRoomType, conn);
                 MySqlDataReader row;
@@ -49,6 +55,24 @@ namespace Aplikasi_TiketKeun.WinForm
                     string RoomType = row["Name"].ToString();
                     RoomTypeCB.Items.Add(RoomType);
                 }
+                conn.Close();
+
+                // ---------------------------- MEMUAT DATA ITEM -----------------------------
+
+                conn.Open();
+                MySqlCommand cmdItem = new MySqlCommand(QItem, conn);
+                MySqlDataReader ItemRow;
+                ItemRow = cmdItem.ExecuteReader();
+                while (ItemRow.Read())
+                {
+                    string ItemName = ItemRow["Name"].ToString();
+                    ItemCB.Items.Add(ItemName);
+                }
+                conn.Close();
+
+                // ---------------------------------------------------------
+
+
 
 
             }
@@ -74,7 +98,15 @@ namespace Aplikasi_TiketKeun.WinForm
         
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                object[] rowData = new object[row.Cells.Count];
+                for (int i = 0; i < rowData.Length; ++i)
+                {
+                    rowData[i] = row.Cells[i].Value;
+                }
+                this.dataGridView4.Rows.Add(rowData);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -83,17 +115,16 @@ namespace Aplikasi_TiketKeun.WinForm
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-     
-                
-                    int editIndex = dataGridView4.Rows.Add();
-                    dataGridView4.Rows[e.RowIndex].Cells[0].Value = dataGridView1.Rows[e.ColumnIndex].Cells[0].Value;
-                    dataGridView4.Rows[e.RowIndex].Cells[1].Value = dataGridView1.Rows[e.ColumnIndex].Cells[1].Value;
-                    dataGridView4.Rows[e.RowIndex].Cells[2].Value = dataGridView1.Rows[e.ColumnIndex].Cells[2].Value;
-                    dataGridView4.Rows[e.RowIndex].Cells[3].Value = dataGridView1.Rows[e.ColumnIndex].Cells[3].Value;
-
-                   
+ 
             }
         }
-        
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView4.SelectedRows)
+            {
+                dataGridView4.Rows.RemoveAt(row.Index);
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aplikasi_TiketKeun.WinForm;
 
 namespace Aplikasi_TiketKeun
 {
@@ -61,7 +62,8 @@ namespace Aplikasi_TiketKeun
 
         private void gunaButton11_Click(object sender, EventArgs e)
         {
-           
+            WinForm.UserEmployee WF = new UserEmployee();
+            addUserControl(WF);
         }
 
         private void gunaPanel2_Paint(object sender, PaintEventArgs e)

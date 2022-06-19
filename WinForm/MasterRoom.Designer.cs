@@ -30,19 +30,20 @@ namespace Aplikasi_TiketKeun.WinForm
         private void InitializeComponent()
         {
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.Deskripsi = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
+            this.TypeCB = new Guna.UI.WinForms.GunaComboBox();
+            this.NoRuangan = new Guna.UI.WinForms.GunaTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.gunaTextBox3 = new Guna.UI.WinForms.GunaTextBox();
+            this.LantaiRuangan = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ReservationBTN = new Guna.UI.WinForms.GunaButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RoomButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -52,15 +53,15 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.gunaTextBox1);
+            this.gunaGroupBox1.Controls.Add(this.Deskripsi);
             this.gunaGroupBox1.Controls.Add(this.label2);
-            this.gunaGroupBox1.Controls.Add(this.gunaComboBox1);
-            this.gunaGroupBox1.Controls.Add(this.gunaTextBox2);
+            this.gunaGroupBox1.Controls.Add(this.TypeCB);
+            this.gunaGroupBox1.Controls.Add(this.NoRuangan);
             this.gunaGroupBox1.Controls.Add(this.label4);
             this.gunaGroupBox1.Controls.Add(this.gunaButton3);
             this.gunaGroupBox1.Controls.Add(this.gunaButton2);
             this.gunaGroupBox1.Controls.Add(this.gunaButton1);
-            this.gunaGroupBox1.Controls.Add(this.gunaTextBox3);
+            this.gunaGroupBox1.Controls.Add(this.LantaiRuangan);
             this.gunaGroupBox1.Controls.Add(this.label3);
             this.gunaGroupBox1.Controls.Add(this.label1);
             this.gunaGroupBox1.Controls.Add(this.ReservationBTN);
@@ -75,22 +76,22 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.Text = "Master Room";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaTextBox1
+            // Deskripsi
             // 
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaTextBox1.Location = new System.Drawing.Point(169, 381);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(333, 30);
-            this.gunaTextBox1.TabIndex = 22;
+            this.Deskripsi.BaseColor = System.Drawing.Color.White;
+            this.Deskripsi.BorderColor = System.Drawing.Color.Silver;
+            this.Deskripsi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Deskripsi.FocusedBaseColor = System.Drawing.Color.White;
+            this.Deskripsi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Deskripsi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.Deskripsi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Deskripsi.ForeColor = System.Drawing.Color.Black;
+            this.Deskripsi.Location = new System.Drawing.Point(169, 381);
+            this.Deskripsi.Name = "Deskripsi";
+            this.Deskripsi.PasswordChar = '\0';
+            this.Deskripsi.SelectedText = "";
+            this.Deskripsi.Size = new System.Drawing.Size(333, 30);
+            this.Deskripsi.TabIndex = 22;
             // 
             // label2
             // 
@@ -102,40 +103,41 @@ namespace Aplikasi_TiketKeun.WinForm
             this.label2.TabIndex = 21;
             this.label2.Text = "Deksripsi";
             // 
-            // gunaComboBox1
+            // TypeCB
             // 
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Location = new System.Drawing.Point(169, 305);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox1.Size = new System.Drawing.Size(333, 26);
-            this.gunaComboBox1.TabIndex = 20;
+            this.TypeCB.BackColor = System.Drawing.Color.Transparent;
+            this.TypeCB.BaseColor = System.Drawing.Color.White;
+            this.TypeCB.BorderColor = System.Drawing.Color.Silver;
+            this.TypeCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.TypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeCB.FocusedColor = System.Drawing.Color.Empty;
+            this.TypeCB.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.TypeCB.ForeColor = System.Drawing.Color.Black;
+            this.TypeCB.FormattingEnabled = true;
+            this.TypeCB.Location = new System.Drawing.Point(169, 305);
+            this.TypeCB.Name = "TypeCB";
+            this.TypeCB.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.TypeCB.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.TypeCB.Size = new System.Drawing.Size(333, 26);
+            this.TypeCB.TabIndex = 20;
+            this.TypeCB.SelectedIndexChanged += new System.EventHandler(this.gunaComboBox1_SelectedIndexChanged);
             // 
-            // gunaTextBox2
+            // NoRuangan
             // 
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.gunaTextBox2.Location = new System.Drawing.Point(169, 267);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(333, 30);
-            this.gunaTextBox2.TabIndex = 19;
+            this.NoRuangan.BaseColor = System.Drawing.Color.White;
+            this.NoRuangan.BorderColor = System.Drawing.Color.Silver;
+            this.NoRuangan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NoRuangan.FocusedBaseColor = System.Drawing.Color.White;
+            this.NoRuangan.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.NoRuangan.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.NoRuangan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NoRuangan.ForeColor = System.Drawing.Color.Black;
+            this.NoRuangan.Location = new System.Drawing.Point(169, 267);
+            this.NoRuangan.Name = "NoRuangan";
+            this.NoRuangan.PasswordChar = '\0';
+            this.NoRuangan.SelectedText = "";
+            this.NoRuangan.Size = new System.Drawing.Size(333, 30);
+            this.NoRuangan.TabIndex = 19;
             // 
             // label4
             // 
@@ -222,22 +224,22 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaButton1.Text = "Update";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // gunaTextBox3
+            // LantaiRuangan
             // 
-            this.gunaTextBox3.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox3.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox3.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox3.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox3.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox3.ForeColor = System.Drawing.Color.Black;
-            this.gunaTextBox3.Location = new System.Drawing.Point(169, 343);
-            this.gunaTextBox3.Name = "gunaTextBox3";
-            this.gunaTextBox3.PasswordChar = '\0';
-            this.gunaTextBox3.SelectedText = "";
-            this.gunaTextBox3.Size = new System.Drawing.Size(333, 30);
-            this.gunaTextBox3.TabIndex = 13;
+            this.LantaiRuangan.BaseColor = System.Drawing.Color.White;
+            this.LantaiRuangan.BorderColor = System.Drawing.Color.Silver;
+            this.LantaiRuangan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LantaiRuangan.FocusedBaseColor = System.Drawing.Color.White;
+            this.LantaiRuangan.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.LantaiRuangan.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.LantaiRuangan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.LantaiRuangan.ForeColor = System.Drawing.Color.Black;
+            this.LantaiRuangan.Location = new System.Drawing.Point(169, 343);
+            this.LantaiRuangan.Name = "LantaiRuangan";
+            this.LantaiRuangan.PasswordChar = '\0';
+            this.LantaiRuangan.SelectedText = "";
+            this.LantaiRuangan.Size = new System.Drawing.Size(333, 30);
+            this.LantaiRuangan.TabIndex = 13;
             // 
             // label3
             // 
@@ -283,15 +285,31 @@ namespace Aplikasi_TiketKeun.WinForm
             this.ReservationBTN.TabIndex = 7;
             this.ReservationBTN.Text = "Insert";
             this.ReservationBTN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ReservationBTN.Click += new System.EventHandler(this.ReservationBTN_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RoomButton});
             this.dataGridView1.Location = new System.Drawing.Point(16, 57);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(756, 186);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // RoomButton
+            // 
+            this.RoomButton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RoomButton.HeaderText = "Pilih";
+            this.RoomButton.Name = "RoomButton";
+            this.RoomButton.ReadOnly = true;
+            this.RoomButton.Width = 46;
             // 
             // MasterRoom
             // 
@@ -311,18 +329,19 @@ namespace Aplikasi_TiketKeun.WinForm
         #endregion
 
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox Deskripsi;
         private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaComboBox TypeCB;
+        private Guna.UI.WinForms.GunaTextBox NoRuangan;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaButton gunaButton3;
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaButton gunaButton1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox3;
+        private Guna.UI.WinForms.GunaTextBox LantaiRuangan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaButton ReservationBTN;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewButtonColumn RoomButton;
     }
 }

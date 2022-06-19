@@ -314,7 +314,7 @@ namespace Aplikasi_TiketKeun
             // gunaElipse1
             // 
             this.gunaElipse1.Radius = 3;
-            this.gunaElipse1.TargetControl = this;
+            this.gunaElipse1.TargetControl = null;
             // 
             // pictureBox1
             // 

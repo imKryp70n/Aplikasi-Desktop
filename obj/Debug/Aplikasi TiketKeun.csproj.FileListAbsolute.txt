@@ -137,3 +137,6 @@ C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi Ti
 C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.exe
 C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi TiketKeun.pdb
 C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.DeleteForm.DeleteItem.resources
+C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.DeleteForm.DeleteItem.resources
+C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterItem.resources
+C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.UserEmployee.resources

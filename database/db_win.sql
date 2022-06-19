@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 16, 2022 at 03:08 PM
+-- Generation Time: Jun 19, 2022 at 02:16 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -103,8 +103,7 @@ CREATE TABLE `employee` (
 INSERT INTO `employee` (`ID`, `Username`, `Password`, `Name`, `Email`, `Address`, `DateOfBirth`, `JobID`) VALUES
 (1, 'Admin', '12345', 'Admin', 'Admin@gmail.com', 'Cimahi', '2022-06-16', 1),
 (2, 'HouseKeeper', '12345', 'House Keeper', 'housekeeper@gmail.com', 'Cimahi', '2022-06-16', 2),
-(3, 'keeper', '12345', 'Keeper', 'keeper@gmail.com', 'Jakarta', '2022-06-16', 3),
-(4, 'Keeper1', '12345', 'Keeper1', '@gmail.com', 'Cimahi', '2022-06-08', 3);
+(3, 'keeper', '12345', 'Keeper', 'keeper@gmail.com', 'Jakarta', '2019-07-25', 3);
 
 -- --------------------------------------------------------
 
@@ -118,6 +117,15 @@ CREATE TABLE `item` (
   `RequirePrice` int(11) NOT NULL,
   `CompensationFee` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `item`
+--
+
+INSERT INTO `item` (`ID`, `Name`, `RequirePrice`, `CompensationFee`) VALUES
+(1, 'Kursi', 50000, 60000),
+(2, 'Blangket', 50000, 50000),
+(6, 'Handuk', 30000, 25000);
 
 -- --------------------------------------------------------
 
@@ -209,11 +217,19 @@ CREATE TABLE `reservation_request_item` (
 
 CREATE TABLE `room` (
   `ID` int(11) NOT NULL,
-  `RoomTypeID` int(11) NOT NULL,
+  `RoomTypeID` varchar(100) NOT NULL,
   `RoomNumber` varchar(50) NOT NULL,
   `RoomFloor` varchar(50) NOT NULL,
   `Description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`ID`, `RoomTypeID`, `RoomNumber`, `RoomFloor`, `Description`) VALUES
+(1, 'Double Bed Standard', '24', '3', 'Lengkap dengan TV 32 Inci'),
+(2, 'Premium 2 Kasur', '25', '3', 'Lengkap dengan TV 32 Inci dan Wifi');
 
 -- --------------------------------------------------------
 
@@ -223,10 +239,19 @@ CREATE TABLE `room` (
 
 CREATE TABLE `roomtype` (
   `ID` int(11) NOT NULL,
-  `Name` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
   `Capacity` int(11) NOT NULL,
   `RoomPrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `roomtype`
+--
+
+INSERT INTO `roomtype` (`ID`, `Name`, `Capacity`, `RoomPrice`) VALUES
+(1, 'Double Bed Standard', 4, 250000),
+(2, 'Premium 2 Kasur', 5, 350000),
+(6, 'Standard 1 Bed', 1, 150000);
 
 --
 -- Indexes for dumped tables
@@ -336,7 +361,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `job`
@@ -372,13 +397,13 @@ ALTER TABLE `reservation_request_item`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `roomtype`
 --
 ALTER TABLE `roomtype`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
