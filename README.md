@@ -36,6 +36,11 @@ Please contact : joemusicamv12@gmail.com
 - [MySQL For Visual Studio](https://dev.mysql.com/downloads/windows/visualstudio/1.2.html)
 
 
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
 
 
     
