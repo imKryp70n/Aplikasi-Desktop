@@ -140,3 +140,4 @@ C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_Ti
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.DeleteForm.DeleteItem.resources
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterItem.resources
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.UserEmployee.resources
+C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.UserEmployee.resources

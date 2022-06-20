@@ -37,19 +37,34 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaNumeric1 = new Guna.UI.WinForms.GunaNumeric();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.RoomNumberBox = new Guna.UI.WinForms.GunaComboBox();
+            this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
+            this.QtyBox = new Guna.UI.WinForms.GunaNumeric();
             this.ItemCB = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.DeleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HargaItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomFloor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
+            this.NameBox = new Guna.UI.WinForms.GunaTextBox();
+            this.PhoneNumber = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaRadioButton2 = new Guna.UI.WinForms.GunaRadioButton();
             this.gunaRadioButton1 = new Guna.UI.WinForms.GunaRadioButton();
@@ -61,13 +76,12 @@ namespace Aplikasi_TiketKeun.WinForm
             this.DateTime = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.gunaGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -229,8 +243,10 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox3.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox3.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox3.BorderSize = 1;
+            this.gunaGroupBox3.Controls.Add(this.RoomNumberBox);
+            this.gunaGroupBox3.Controls.Add(this.gunaLabel9);
             this.gunaGroupBox3.Controls.Add(this.gunaButton4);
-            this.gunaGroupBox3.Controls.Add(this.gunaNumeric1);
+            this.gunaGroupBox3.Controls.Add(this.QtyBox);
             this.gunaGroupBox3.Controls.Add(this.ItemCB);
             this.gunaGroupBox3.Controls.Add(this.gunaLabel7);
             this.gunaGroupBox3.Controls.Add(this.gunaLabel6);
@@ -243,22 +259,87 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox3.Text = "Request additional item(s)";
             this.gunaGroupBox3.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // gunaNumeric1
+            // dataGridView2
             // 
-            this.gunaNumeric1.BaseColor = System.Drawing.Color.White;
-            this.gunaNumeric1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaNumeric1.ButtonColor = System.Drawing.Color.DodgerBlue;
-            this.gunaNumeric1.ButtonForeColor = System.Drawing.Color.White;
-            this.gunaNumeric1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaNumeric1.ForeColor = System.Drawing.Color.Black;
-            this.gunaNumeric1.Location = new System.Drawing.Point(80, 73);
-            this.gunaNumeric1.Maximum = ((long)(9999999));
-            this.gunaNumeric1.Minimum = ((long)(0));
-            this.gunaNumeric1.Name = "gunaNumeric1";
-            this.gunaNumeric1.Size = new System.Drawing.Size(162, 30);
-            this.gunaNumeric1.TabIndex = 20;
-            this.gunaNumeric1.Text = "gunaNumeric1";
-            this.gunaNumeric1.Value = ((long)(0));
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.GridColor = System.Drawing.Color.Black;
+            this.dataGridView2.Location = new System.Drawing.Point(8, 108);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(320, 114);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // RoomNumberBox
+            // 
+            this.RoomNumberBox.BackColor = System.Drawing.Color.Transparent;
+            this.RoomNumberBox.BaseColor = System.Drawing.Color.White;
+            this.RoomNumberBox.BorderColor = System.Drawing.Color.Silver;
+            this.RoomNumberBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.RoomNumberBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RoomNumberBox.FocusedColor = System.Drawing.Color.Empty;
+            this.RoomNumberBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.RoomNumberBox.ForeColor = System.Drawing.Color.Black;
+            this.RoomNumberBox.FormattingEnabled = true;
+            this.RoomNumberBox.Location = new System.Drawing.Point(188, 75);
+            this.RoomNumberBox.Name = "RoomNumberBox";
+            this.RoomNumberBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.RoomNumberBox.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.RoomNumberBox.Size = new System.Drawing.Size(50, 26);
+            this.RoomNumberBox.TabIndex = 23;
+            // 
+            // gunaLabel9
+            // 
+            this.gunaLabel9.AutoSize = true;
+            this.gunaLabel9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel9.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel9.Location = new System.Drawing.Point(136, 78);
+            this.gunaLabel9.Name = "gunaLabel9";
+            this.gunaLabel9.Size = new System.Drawing.Size(52, 21);
+            this.gunaLabel9.TabIndex = 22;
+            this.gunaLabel9.Text = "Room";
+            // 
+            // gunaButton4
+            // 
+            this.gunaButton4.Animated = true;
+            this.gunaButton4.AnimationHoverSpeed = 0.07F;
+            this.gunaButton4.AnimationSpeed = 0.03F;
+            this.gunaButton4.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton4.ForeColor = System.Drawing.Color.White;
+            this.gunaButton4.Image = null;
+            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton4.Location = new System.Drawing.Point(258, 77);
+            this.gunaButton4.Name = "gunaButton4";
+            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton4.OnHoverImage = null;
+            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton4.Size = new System.Drawing.Size(69, 26);
+            this.gunaButton4.TabIndex = 21;
+            this.gunaButton4.Text = "Add";
+            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
+            // 
+            // QtyBox
+            // 
+            this.QtyBox.BaseColor = System.Drawing.Color.White;
+            this.QtyBox.BorderColor = System.Drawing.Color.Silver;
+            this.QtyBox.ButtonColor = System.Drawing.Color.DodgerBlue;
+            this.QtyBox.ButtonForeColor = System.Drawing.Color.White;
+            this.QtyBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.QtyBox.ForeColor = System.Drawing.Color.Black;
+            this.QtyBox.Location = new System.Drawing.Point(56, 73);
+            this.QtyBox.Maximum = ((long)(9999999));
+            this.QtyBox.Minimum = ((long)(0));
+            this.QtyBox.Name = "QtyBox";
+            this.QtyBox.Size = new System.Drawing.Size(72, 30);
+            this.QtyBox.TabIndex = 20;
+            this.QtyBox.Text = "gunaNumeric1";
+            this.QtyBox.Value = ((long)(0));
             // 
             // ItemCB
             // 
@@ -271,11 +352,11 @@ namespace Aplikasi_TiketKeun.WinForm
             this.ItemCB.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ItemCB.ForeColor = System.Drawing.Color.Black;
             this.ItemCB.FormattingEnabled = true;
-            this.ItemCB.Location = new System.Drawing.Point(80, 40);
+            this.ItemCB.Location = new System.Drawing.Point(56, 40);
             this.ItemCB.Name = "ItemCB";
             this.ItemCB.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.ItemCB.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.ItemCB.Size = new System.Drawing.Size(162, 26);
+            this.ItemCB.Size = new System.Drawing.Size(263, 26);
             this.ItemCB.TabIndex = 19;
             // 
             // gunaLabel7
@@ -283,7 +364,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaLabel7.AutoSize = true;
             this.gunaLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel7.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel7.Location = new System.Drawing.Point(31, 76);
+            this.gunaLabel7.Location = new System.Drawing.Point(7, 76);
             this.gunaLabel7.Name = "gunaLabel7";
             this.gunaLabel7.Size = new System.Drawing.Size(35, 21);
             this.gunaLabel7.TabIndex = 18;
@@ -294,7 +375,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaLabel6.AutoSize = true;
             this.gunaLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel6.ForeColor = System.Drawing.Color.Black;
-            this.gunaLabel6.Location = new System.Drawing.Point(31, 41);
+            this.gunaLabel6.Location = new System.Drawing.Point(7, 41);
             this.gunaLabel6.Name = "gunaLabel6";
             this.gunaLabel6.Size = new System.Drawing.Size(41, 21);
             this.gunaLabel6.TabIndex = 17;
@@ -302,13 +383,62 @@ namespace Aplikasi_TiketKeun.WinForm
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView5.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DeleteItem,
+            this.ItemName,
+            this.ItemQTY,
+            this.ItemRoom,
+            this.HargaItem});
             this.dataGridView5.GridColor = System.Drawing.Color.Black;
             this.dataGridView5.Location = new System.Drawing.Point(7, 108);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
             this.dataGridView5.Size = new System.Drawing.Size(320, 114);
             this.dataGridView5.TabIndex = 3;
+            this.dataGridView5.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellContentClick);
+            // 
+            // DeleteItem
+            // 
+            this.DeleteItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DeleteItem.HeaderText = "Del";
+            this.DeleteItem.Name = "DeleteItem";
+            this.DeleteItem.ReadOnly = true;
+            this.DeleteItem.Width = 39;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 112;
+            // 
+            // ItemQTY
+            // 
+            this.ItemQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ItemQTY.HeaderText = "Item QTY";
+            this.ItemQTY.Name = "ItemQTY";
+            this.ItemQTY.ReadOnly = true;
+            this.ItemQTY.Width = 98;
+            // 
+            // ItemRoom
+            // 
+            this.ItemRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ItemRoom.HeaderText = "Room";
+            this.ItemRoom.Name = "ItemRoom";
+            this.ItemRoom.ReadOnly = true;
+            this.ItemRoom.Width = 77;
+            // 
+            // HargaItem
+            // 
+            this.HargaItem.HeaderText = "Harga";
+            this.HargaItem.Name = "HargaItem";
+            this.HargaItem.ReadOnly = true;
+            this.HargaItem.Width = 77;
             // 
             // gunaLabel2
             // 
@@ -325,35 +455,64 @@ namespace Aplikasi_TiketKeun.WinForm
             // 
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RoomID,
+            this.NameRoom,
             this.RoomNumber,
             this.RoomFloor,
-            this.Description});
+            this.Description,
+            this.RoomPrice});
             this.dataGridView4.Location = new System.Drawing.Point(422, 159);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(339, 150);
             this.dataGridView4.TabIndex = 18;
             // 
+            // RoomID
+            // 
+            this.RoomID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.RoomID.HeaderText = "ID";
+            this.RoomID.Name = "RoomID";
+            this.RoomID.ReadOnly = true;
+            this.RoomID.Width = 50;
+            // 
+            // NameRoom
+            // 
+            this.NameRoom.HeaderText = "Name Room";
+            this.NameRoom.Name = "NameRoom";
+            this.NameRoom.ReadOnly = true;
+            this.NameRoom.Width = 123;
+            // 
             // RoomNumber
             // 
             this.RoomNumber.HeaderText = "Room Number";
             this.RoomNumber.Name = "RoomNumber";
             this.RoomNumber.ReadOnly = true;
+            this.RoomNumber.Width = 139;
             // 
             // RoomFloor
             // 
             this.RoomFloor.HeaderText = "Room Floor";
             this.RoomFloor.Name = "RoomFloor";
             this.RoomFloor.ReadOnly = true;
+            this.RoomFloor.Width = 117;
             // 
             // Description
             // 
             this.Description.HeaderText = "Deskripsi";
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
+            this.Description.Width = 99;
+            // 
+            // RoomPrice
+            // 
+            this.RoomPrice.HeaderText = "Room Price";
+            this.RoomPrice.Name = "RoomPrice";
+            this.RoomPrice.ReadOnly = true;
+            this.RoomPrice.Width = 115;
             // 
             // gunaLabel1
             // 
@@ -373,6 +532,10 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox2.BorderSize = 1;
             this.gunaGroupBox2.Controls.Add(this.dataGridView2);
+            this.gunaGroupBox2.Controls.Add(this.gunaLabel11);
+            this.gunaGroupBox2.Controls.Add(this.NameBox);
+            this.gunaGroupBox2.Controls.Add(this.PhoneNumber);
+            this.gunaGroupBox2.Controls.Add(this.gunaLabel10);
             this.gunaGroupBox2.Controls.Add(this.gunaTextBox1);
             this.gunaGroupBox2.Controls.Add(this.gunaRadioButton2);
             this.gunaGroupBox2.Controls.Add(this.gunaRadioButton1);
@@ -384,15 +547,63 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox2.Text = "Customer Data";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
             // 
-            // dataGridView2
+            // gunaLabel11
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.Color.Black;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 108);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(320, 114);
-            this.dataGridView2.TabIndex = 3;
+            this.gunaLabel11.AutoSize = true;
+            this.gunaLabel11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel11.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel11.Location = new System.Drawing.Point(8, 127);
+            this.gunaLabel11.Name = "gunaLabel11";
+            this.gunaLabel11.Size = new System.Drawing.Size(52, 21);
+            this.gunaLabel11.TabIndex = 19;
+            this.gunaLabel11.Text = "Name";
+            // 
+            // NameBox
+            // 
+            this.NameBox.BaseColor = System.Drawing.Color.White;
+            this.NameBox.BorderColor = System.Drawing.Color.Silver;
+            this.NameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NameBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.NameBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.NameBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.NameBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NameBox.ForeColor = System.Drawing.Color.Black;
+            this.NameBox.Location = new System.Drawing.Point(135, 125);
+            this.NameBox.MaxLength = 15;
+            this.NameBox.Name = "NameBox";
+            this.NameBox.PasswordChar = '\0';
+            this.NameBox.SelectedText = "";
+            this.NameBox.Size = new System.Drawing.Size(182, 30);
+            this.NameBox.TabIndex = 20;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.BaseColor = System.Drawing.Color.White;
+            this.PhoneNumber.BorderColor = System.Drawing.Color.Silver;
+            this.PhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PhoneNumber.FocusedBaseColor = System.Drawing.Color.White;
+            this.PhoneNumber.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.PhoneNumber.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.PhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.PhoneNumber.ForeColor = System.Drawing.Color.Black;
+            this.PhoneNumber.Location = new System.Drawing.Point(135, 89);
+            this.PhoneNumber.MaxLength = 15;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.PasswordChar = '\0';
+            this.PhoneNumber.SelectedText = "";
+            this.PhoneNumber.Size = new System.Drawing.Size(182, 30);
+            this.PhoneNumber.TabIndex = 18;
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel10.ForeColor = System.Drawing.Color.Black;
+            this.gunaLabel10.Location = new System.Drawing.Point(8, 92);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(116, 21);
+            this.gunaLabel10.TabIndex = 17;
+            this.gunaLabel10.Text = "Phone Number";
             // 
             // gunaTextBox1
             // 
@@ -423,6 +634,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaRadioButton2.Size = new System.Drawing.Size(66, 20);
             this.gunaRadioButton2.TabIndex = 1;
             this.gunaRadioButton2.Text = "Search";
+            this.gunaRadioButton2.CheckedChanged += new System.EventHandler(this.gunaRadioButton2_CheckedChanged);
             // 
             // gunaRadioButton1
             // 
@@ -536,7 +748,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.DateTime.OnPressedColor = System.Drawing.Color.Black;
             this.DateTime.Size = new System.Drawing.Size(234, 30);
             this.DateTime.TabIndex = 5;
-            this.DateTime.Text = "Sabtu, 18 Juni 2022";
+            this.DateTime.Text = "18 June 2022";
             this.DateTime.Value = new System.DateTime(2022, 6, 18, 0, 0, 0, 0);
             // 
             // gunaLabel3
@@ -558,31 +770,6 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 6;
             // 
-            // gunaButton4
-            // 
-            this.gunaButton4.Animated = true;
-            this.gunaButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaButton4.AnimationSpeed = 0.03F;
-            this.gunaButton4.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.gunaButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaButton4.Image = null;
-            this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton4.Location = new System.Drawing.Point(258, 77);
-            this.gunaButton4.Name = "gunaButton4";
-            this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
-            this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton4.OnHoverImage = null;
-            this.gunaButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton4.Size = new System.Drawing.Size(69, 26);
-            this.gunaButton4.TabIndex = 21;
-            this.gunaButton4.Text = "Add";
-            this.gunaButton4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,11 +783,11 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.PerformLayout();
             this.gunaGroupBox3.ResumeLayout(false);
             this.gunaGroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
@@ -629,7 +816,7 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private System.Windows.Forms.DataGridView dataGridView4;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
-        private Guna.UI.WinForms.GunaNumeric gunaNumeric1;
+        private Guna.UI.WinForms.GunaNumeric QtyBox;
         private Guna.UI.WinForms.GunaComboBox ItemCB;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
         private Guna.UI.WinForms.GunaButton gunaButton1;
@@ -638,9 +825,23 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaLabel TotalBayarLBL;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaNumeric gunaNumeric2;
+        private Guna.UI.WinForms.GunaButton gunaButton4;
+        private Guna.UI.WinForms.GunaComboBox RoomNumberBox;
+        private Guna.UI.WinForms.GunaLabel gunaLabel9;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemQTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HargaItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomFloor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private Guna.UI.WinForms.GunaButton gunaButton4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomPrice;
+        private Guna.UI.WinForms.GunaTextBox NameBox;
+        private Guna.UI.WinForms.GunaLabel gunaLabel11;
+        private Guna.UI.WinForms.GunaTextBox PhoneNumber;
+        private Guna.UI.WinForms.GunaLabel gunaLabel10;
     }
 }

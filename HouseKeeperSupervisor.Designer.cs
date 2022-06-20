@@ -31,6 +31,8 @@ namespace Aplikasi_TiketKeun
         {
             this.components = new System.ComponentModel.Container();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
+            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
@@ -38,7 +40,7 @@ namespace Aplikasi_TiketKeun
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gunaComboBox2 = new Guna.UI.WinForms.GunaComboBox();
+            this.RoomNumberBox = new Guna.UI.WinForms.GunaComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@ namespace Aplikasi_TiketKeun
             this.db_winDataSet = new Aplikasi_TiketKeun.db_winDataSet();
             this.dbwinDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
-            this.gunaButton5 = new Guna.UI.WinForms.GunaButton();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,6 +68,55 @@ namespace Aplikasi_TiketKeun
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(217, 486);
             this.gunaPanel2.TabIndex = 3;
+            // 
+            // gunaButton5
+            // 
+            this.gunaButton5.Animated = true;
+            this.gunaButton5.AnimationHoverSpeed = 0.07F;
+            this.gunaButton5.AnimationSpeed = 0.03F;
+            this.gunaButton5.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton5.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton5.ForeColor = System.Drawing.Color.White;
+            this.gunaButton5.Image = global::Aplikasi_TiketKeun.Properties.Resources.about;
+            this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton5.Location = new System.Drawing.Point(0, 425);
+            this.gunaButton5.Name = "gunaButton5";
+            this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton5.OnHoverImage = null;
+            this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton5.Size = new System.Drawing.Size(217, 42);
+            this.gunaButton5.TabIndex = 8;
+            this.gunaButton5.Text = "Tentang";
+            // 
+            // gunaButton3
+            // 
+            this.gunaButton3.Animated = true;
+            this.gunaButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaButton3.AnimationSpeed = 0.03F;
+            this.gunaButton3.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaButton3.Image = global::Aplikasi_TiketKeun.Properties.Resources.calendar;
+            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton3.Location = new System.Drawing.Point(0, 52);
+            this.gunaButton3.Name = "gunaButton3";
+            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton3.OnHoverImage = null;
+            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton3.Size = new System.Drawing.Size(217, 42);
+            this.gunaButton3.TabIndex = 6;
+            this.gunaButton3.Text = "Add House Keeper Schdule";
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // gunaPanel1
             // 
@@ -147,7 +196,7 @@ namespace Aplikasi_TiketKeun
             // 
             this.panel1.Controls.Add(this.gunaButton1);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.gunaComboBox2);
+            this.panel1.Controls.Add(this.RoomNumberBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.gunaComboBox1);
             this.panel1.Controls.Add(this.label4);
@@ -196,23 +245,23 @@ namespace Aplikasi_TiketKeun
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // gunaComboBox2
+            // RoomNumberBox
             // 
-            this.gunaComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaComboBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox2.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox2.FormattingEnabled = true;
-            this.gunaComboBox2.Location = new System.Drawing.Point(250, 197);
-            this.gunaComboBox2.Name = "gunaComboBox2";
-            this.gunaComboBox2.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox2.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox2.Size = new System.Drawing.Size(286, 26);
-            this.gunaComboBox2.TabIndex = 6;
+            this.RoomNumberBox.BackColor = System.Drawing.Color.Transparent;
+            this.RoomNumberBox.BaseColor = System.Drawing.Color.White;
+            this.RoomNumberBox.BorderColor = System.Drawing.Color.Silver;
+            this.RoomNumberBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.RoomNumberBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RoomNumberBox.FocusedColor = System.Drawing.Color.Empty;
+            this.RoomNumberBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.RoomNumberBox.ForeColor = System.Drawing.Color.Black;
+            this.RoomNumberBox.FormattingEnabled = true;
+            this.RoomNumberBox.Location = new System.Drawing.Point(250, 197);
+            this.RoomNumberBox.Name = "RoomNumberBox";
+            this.RoomNumberBox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.RoomNumberBox.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.RoomNumberBox.Size = new System.Drawing.Size(286, 26);
+            this.RoomNumberBox.TabIndex = 6;
             // 
             // label5
             // 
@@ -282,7 +331,7 @@ namespace Aplikasi_TiketKeun
             this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaDateTimePicker1.Size = new System.Drawing.Size(286, 30);
             this.gunaDateTimePicker1.TabIndex = 1;
-            this.gunaDateTimePicker1.Text = "Kamis, 16 Juni 2022";
+            this.gunaDateTimePicker1.Text = "16 June 2022";
             this.gunaDateTimePicker1.Value = new System.DateTime(2022, 6, 16, 7, 23, 21, 762);
             // 
             // label2
@@ -308,55 +357,6 @@ namespace Aplikasi_TiketKeun
             // gunaDragControl1
             // 
             this.gunaDragControl1.TargetControl = this.panel1;
-            // 
-            // gunaButton5
-            // 
-            this.gunaButton5.Animated = true;
-            this.gunaButton5.AnimationHoverSpeed = 0.07F;
-            this.gunaButton5.AnimationSpeed = 0.03F;
-            this.gunaButton5.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.gunaButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton5.ForeColor = System.Drawing.Color.White;
-            this.gunaButton5.Image = global::Aplikasi_TiketKeun.Properties.Resources.about;
-            this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton5.Location = new System.Drawing.Point(0, 425);
-            this.gunaButton5.Name = "gunaButton5";
-            this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
-            this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton5.OnHoverImage = null;
-            this.gunaButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton5.Size = new System.Drawing.Size(217, 42);
-            this.gunaButton5.TabIndex = 8;
-            this.gunaButton5.Text = "Tentang";
-            // 
-            // gunaButton3
-            // 
-            this.gunaButton3.Animated = true;
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BaseColor = System.Drawing.Color.DodgerBlue;
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = global::Aplikasi_TiketKeun.Properties.Resources.calendar;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton3.Location = new System.Drawing.Point(0, 52);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Size = new System.Drawing.Size(217, 42);
-            this.gunaButton3.TabIndex = 6;
-            this.gunaButton3.Text = "Add House Keeper Schdule";
-            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // HouseKeeperSupervisor
             // 
@@ -397,7 +397,7 @@ namespace Aplikasi_TiketKeun
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource dbwinDataSetBindingSource;
         private db_winDataSet db_winDataSet;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox2;
+        private Guna.UI.WinForms.GunaComboBox RoomNumberBox;
         private System.Windows.Forms.Label label5;
         private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
         private System.Windows.Forms.Label label4;

@@ -18,7 +18,7 @@ namespace Aplikasi_TiketKeun.WinForm
             InitializeComponent();
         }
         string SQLConn = "server=localhost;user id=root;database=db_win;sslmode=Disabled";
-        String QueryTypeCB = "SELECT Name FROM roomtype";
+        String QueryTypeCB = "SELECT * FROM roomtype";
         private void MasterRoom_Load(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(SQLConn);
@@ -29,8 +29,9 @@ namespace Aplikasi_TiketKeun.WinForm
             row = cmd.ExecuteReader();
             while (row.Read())
             {
-                var TypeItem = row["Name"].ToString();
-                TypeCB.Items.Add(TypeItem);
+                //int TypeItem = int.Parse(row["ID"].ToString());
+                var NameType = row["Name"].ToString();
+                TypeCB.Items.Add(NameType);
             }
             conn.Close();
             conn.Open();
@@ -48,7 +49,7 @@ namespace Aplikasi_TiketKeun.WinForm
         {
 
         }
-
+        int ID;
         private void ReservationBTN_Click(object sender, EventArgs e)
         {
             if (NoRuangan.Text != "" && TypeCB.Text != "" && LantaiRuangan.Text != "" && Deskripsi.Text != "")
@@ -58,9 +59,26 @@ namespace Aplikasi_TiketKeun.WinForm
                     "INSERT INTO room(ID, RoomTypeID, RoomNumber, RoomFloor, Description) VALUES (NULL,@RoomTypeID,@RoomNumber,@RoomFloor,@Description)";
                 try
                 {
+                    //while(TypeCB.)
+                    // ---------------------------------------------------------
+                    conn.Open();
+                    string nama = TypeCB.Text;
+                    string NameQuery = "SELECT ID FROM roomtype WHERE Name='" + nama + "'";
+                    MySqlDataReader row;
+                    MySqlCommand NameTest = new MySqlCommand(NameQuery, conn);
+                    NameTest.ExecuteNonQuery();
+                    row = NameTest.ExecuteReader();
+                    while (row.Read())
+                    {
+                        ID = int.Parse(row["ID"].ToString());
+                    }
+
+                    conn.Close();
+                     // --------------------------------------------------------
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand(Query, conn);
-                    cmd.Parameters.AddWithValue("@RoomTypeID", TypeCB.Text);
+
+                    cmd.Parameters.AddWithValue("@RoomTypeID", ID);
                     cmd.Parameters.AddWithValue("@RoomNumber", NoRuangan.Text);
                     cmd.Parameters.AddWithValue("@RoomFloor", LantaiRuangan.Text);
                     cmd.Parameters.AddWithValue("@Description", Deskripsi.Text);

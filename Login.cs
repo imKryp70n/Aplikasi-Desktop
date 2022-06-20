@@ -95,7 +95,7 @@ namespace Aplikasi_TiketKeun
                         {
                             MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
-                            Thread.Sleep(3000);
+                            //Thread.Sleep(3000);
 
                             new Beranda().Show();
 

@@ -26,8 +26,23 @@ namespace Aplikasi_TiketKeun
         private void HouseKeeperSupervisor_Load(object sender, EventArgs e)
         {
 
-            panel1.Visible = false;
+
+            string QRoomNumber = "SELECT * FROM room";
             MySqlConnection conn = new MySqlConnection(SQLConn);
+            conn.Open();
+            MySqlCommand cmdRoomNumber = new MySqlCommand(QRoomNumber, conn);
+            MySqlDataReader RowRoomNumber;
+            RowRoomNumber = cmdRoomNumber.ExecuteReader();
+            while (RowRoomNumber.Read())
+            {
+                string RNumber = RowRoomNumber["RoomNumber"].ToString();
+                RoomNumberBox.Items.Add(RNumber);
+            }
+            conn.Close();
+
+            // --------------------------------------------------------
+            panel1.Visible = false;
+            
             conn.Open();
             string query = "SELECT * FROM employee where JobID=3";
             MySqlCommand cmd = new MySqlCommand(query,conn);
