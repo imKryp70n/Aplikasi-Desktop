@@ -49,6 +49,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaButton12 = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
@@ -82,6 +83,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox3.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox3.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox3.BorderSize = 1;
+            this.gunaGroupBox3.Controls.Add(this.gunaButton1);
             this.gunaGroupBox3.Controls.Add(this.label7);
             this.gunaGroupBox3.Controls.Add(this.gunaTextBox6);
             this.gunaGroupBox3.Controls.Add(this.label6);
@@ -350,6 +352,31 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaTextBox1.Size = new System.Drawing.Size(223, 30);
             this.gunaTextBox1.TabIndex = 0;
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.Animated = true;
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BaseColor = System.Drawing.Color.DodgerBlue;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(151, 289);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Size = new System.Drawing.Size(188, 42);
+            this.gunaButton1.TabIndex = 18;
+            this.gunaButton1.Text = "Check in";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // CheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,5 +416,6 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;
         private Guna.UI.WinForms.GunaButton gunaButton12;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

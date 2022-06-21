@@ -30,14 +30,13 @@ namespace Aplikasi_TiketKeun.WinForm
         private void InitializeComponent()
         {
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.gunaNumeric2 = new Guna.UI.WinForms.GunaNumeric();
+            this.MalamBox = new Guna.UI.WinForms.GunaNumeric();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
             this.TotalBayarLBL = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.RoomNumberBox = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
             this.gunaButton4 = new Guna.UI.WinForms.GunaButton();
@@ -61,6 +60,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
             this.NameBox = new Guna.UI.WinForms.GunaTextBox();
             this.PhoneNumber = new Guna.UI.WinForms.GunaTextBox();
@@ -78,10 +78,10 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.gunaGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +92,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.BorderSize = 1;
-            this.gunaGroupBox1.Controls.Add(this.gunaNumeric2);
+            this.gunaGroupBox1.Controls.Add(this.MalamBox);
             this.gunaGroupBox1.Controls.Add(this.gunaButton3);
             this.gunaGroupBox1.Controls.Add(this.gunaButton2);
             this.gunaGroupBox1.Controls.Add(this.TotalBayarLBL);
@@ -121,22 +121,23 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 8);
             this.gunaGroupBox1.Click += new System.EventHandler(this.gunaGroupBox1_Click);
             // 
-            // gunaNumeric2
+            // MalamBox
             // 
-            this.gunaNumeric2.BaseColor = System.Drawing.Color.White;
-            this.gunaNumeric2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaNumeric2.ButtonColor = System.Drawing.Color.DodgerBlue;
-            this.gunaNumeric2.ButtonForeColor = System.Drawing.Color.White;
-            this.gunaNumeric2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaNumeric2.ForeColor = System.Drawing.Color.Black;
-            this.gunaNumeric2.Location = new System.Drawing.Point(538, 48);
-            this.gunaNumeric2.Maximum = ((long)(9999999));
-            this.gunaNumeric2.Minimum = ((long)(0));
-            this.gunaNumeric2.Name = "gunaNumeric2";
-            this.gunaNumeric2.Size = new System.Drawing.Size(211, 30);
-            this.gunaNumeric2.TabIndex = 25;
-            this.gunaNumeric2.Text = "gunaNumeric2";
-            this.gunaNumeric2.Value = ((long)(0));
+            this.MalamBox.BaseColor = System.Drawing.Color.White;
+            this.MalamBox.BorderColor = System.Drawing.Color.Silver;
+            this.MalamBox.ButtonColor = System.Drawing.Color.DodgerBlue;
+            this.MalamBox.ButtonForeColor = System.Drawing.Color.White;
+            this.MalamBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.MalamBox.ForeColor = System.Drawing.Color.Black;
+            this.MalamBox.Location = new System.Drawing.Point(538, 48);
+            this.MalamBox.Maximum = ((long)(9999999));
+            this.MalamBox.Minimum = ((long)(1));
+            this.MalamBox.Name = "MalamBox";
+            this.MalamBox.Size = new System.Drawing.Size(211, 30);
+            this.MalamBox.TabIndex = 25;
+            this.MalamBox.Text = "gunaNumeric2";
+            this.MalamBox.Value = ((long)(1));
+            this.MalamBox.ValueChanged += new System.EventHandler(this.gunaNumeric2_ValueChanged);
             // 
             // gunaButton3
             // 
@@ -200,6 +201,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.TotalBayarLBL.Size = new System.Drawing.Size(19, 21);
             this.TotalBayarLBL.TabIndex = 22;
             this.TotalBayarLBL.Text = "0";
+            this.TotalBayarLBL.Click += new System.EventHandler(this.TotalBayarLBL_Click);
             // 
             // gunaLabel8
             // 
@@ -225,17 +227,18 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = null;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(422, 581);
+            this.gunaButton1.Location = new System.Drawing.Point(422, 574);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Size = new System.Drawing.Size(327, 38);
+            this.gunaButton1.Size = new System.Drawing.Size(339, 38);
             this.gunaButton1.TabIndex = 21;
             this.gunaButton1.Text = "Bayar sekarang";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // gunaGroupBox3
             // 
@@ -258,16 +261,6 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox3.TabIndex = 20;
             this.gunaGroupBox3.Text = "Request additional item(s)";
             this.gunaGroupBox3.TextLocation = new System.Drawing.Point(10, 8);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.Color.Black;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 108);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(320, 114);
-            this.dataGridView2.TabIndex = 3;
             // 
             // RoomNumberBox
             // 
@@ -334,12 +327,12 @@ namespace Aplikasi_TiketKeun.WinForm
             this.QtyBox.ForeColor = System.Drawing.Color.Black;
             this.QtyBox.Location = new System.Drawing.Point(56, 73);
             this.QtyBox.Maximum = ((long)(9999999));
-            this.QtyBox.Minimum = ((long)(0));
+            this.QtyBox.Minimum = ((long)(1));
             this.QtyBox.Name = "QtyBox";
             this.QtyBox.Size = new System.Drawing.Size(72, 30);
             this.QtyBox.TabIndex = 20;
             this.QtyBox.Text = "gunaNumeric1";
-            this.QtyBox.Value = ((long)(0));
+            this.QtyBox.Value = ((long)(1));
             // 
             // ItemCB
             // 
@@ -358,6 +351,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.ItemCB.OnHoverItemForeColor = System.Drawing.Color.White;
             this.ItemCB.Size = new System.Drawing.Size(263, 26);
             this.ItemCB.TabIndex = 19;
+            this.ItemCB.SelectedIndexChanged += new System.EventHandler(this.ItemCB_SelectedIndexChanged);
             // 
             // gunaLabel7
             // 
@@ -547,6 +541,16 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox2.Text = "Customer Data";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(10, 8);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.GridColor = System.Drawing.Color.Black;
+            this.dataGridView2.Location = new System.Drawing.Point(8, 108);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(320, 114);
+            this.dataGridView2.TabIndex = 3;
+            // 
             // gunaLabel11
             // 
             this.gunaLabel11.AutoSize = true;
@@ -569,7 +573,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.NameBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NameBox.ForeColor = System.Drawing.Color.Black;
             this.NameBox.Location = new System.Drawing.Point(135, 125);
-            this.NameBox.MaxLength = 15;
+            this.NameBox.MaxLength = 50;
             this.NameBox.Name = "NameBox";
             this.NameBox.PasswordChar = '\0';
             this.NameBox.SelectedText = "";
@@ -783,11 +787,11 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox1.PerformLayout();
             this.gunaGroupBox3.ResumeLayout(false);
             this.gunaGroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
@@ -824,7 +828,7 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaLabel TotalBayarLBL;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
-        private Guna.UI.WinForms.GunaNumeric gunaNumeric2;
+        private Guna.UI.WinForms.GunaNumeric MalamBox;
         private Guna.UI.WinForms.GunaButton gunaButton4;
         private Guna.UI.WinForms.GunaComboBox RoomNumberBox;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;

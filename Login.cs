@@ -20,8 +20,8 @@ namespace Aplikasi_TiketKeun
         }
         string SQLConn = "server=localhost;user id=root;database=db_win;sslmode=Disabled";
 
-
-
+        public static string GetUserName = "";
+        public static string GetUserID = "";
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -83,6 +83,7 @@ namespace Aplikasi_TiketKeun
             cmd.ExecuteNonQuery();
             row = cmd.ExecuteReader();
             string Role;
+            string NameUser;
             if (UsernameBox.Text != "" && UsernameBox.Text != "")
             {
 
@@ -91,14 +92,21 @@ namespace Aplikasi_TiketKeun
                     while (row.Read())
                     {
                         Role = row["JobID"].ToString();
+                        NameUser = row["Name"].ToString();
+                        GetUserID = row["ID"].ToString();
                         if (Role == "1")
                         {
+                            GetUserName = NameUser;
+                            
                             MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
                             //Thread.Sleep(3000);
 
-                            new Beranda().Show();
+                            Beranda MainForm = new Beranda();
+                            MainForm.Show();
 
+                            
+                            
                         }
                         else if (Role == "2")
                         {

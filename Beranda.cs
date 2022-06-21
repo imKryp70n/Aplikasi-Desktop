@@ -58,6 +58,7 @@ namespace Aplikasi_TiketKeun
 
         private void Beranda_Load(object sender, EventArgs e)
         {
+            User.Text = Login.GetUserName;
         }
 
         private void gunaButton11_Click(object sender, EventArgs e)
@@ -116,6 +117,11 @@ namespace Aplikasi_TiketKeun
         {
             WinForm.MasterItem WF = new WinForm.MasterItem();
             addUserControl(WF);
+        }
+
+        private void User_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

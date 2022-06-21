@@ -47,6 +47,9 @@ namespace Aplikasi_TiketKeun
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
+            this.User = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -133,6 +136,8 @@ namespace Aplikasi_TiketKeun
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.gunaPanel2.Controls.Add(this.User);
+            this.gunaPanel2.Controls.Add(this.gunaLabel2);
             this.gunaPanel2.Controls.Add(this.gunaButton11);
             this.gunaPanel2.Controls.Add(this.gunaButton10);
             this.gunaPanel2.Controls.Add(this.gunaButton9);
@@ -380,6 +385,7 @@ namespace Aplikasi_TiketKeun
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.gunaLabel1);
             this.panel1.Controls.Add(this.gunaPictureBox1);
             this.panel1.Location = new System.Drawing.Point(198, 34);
             this.panel1.Name = "panel1";
@@ -398,6 +404,40 @@ namespace Aplikasi_TiketKeun
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
             // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Location = new System.Drawing.Point(-186, 14);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(46, 21);
+            this.gunaLabel1.TabIndex = 16;
+            this.gunaLabel1.Text = "Hello";
+            // 
+            // gunaLabel2
+            // 
+            this.gunaLabel2.AutoSize = true;
+            this.gunaLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel2.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel2.Location = new System.Drawing.Point(12, 19);
+            this.gunaLabel2.Name = "gunaLabel2";
+            this.gunaLabel2.Size = new System.Drawing.Size(46, 21);
+            this.gunaLabel2.TabIndex = 16;
+            this.gunaLabel2.Text = "Hello";
+            // 
+            // User
+            // 
+            this.User.AutoSize = true;
+            this.User.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User.ForeColor = System.Drawing.Color.White;
+            this.User.Location = new System.Drawing.Point(64, 19);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(41, 21);
+            this.User.TabIndex = 17;
+            this.User.Text = "Role";
+            this.User.Click += new System.EventHandler(this.User_Click);
+            // 
             // Beranda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +455,9 @@ namespace Aplikasi_TiketKeun
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
             this.gunaPanel2.ResumeLayout(false);
+            this.gunaPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -440,5 +482,8 @@ namespace Aplikasi_TiketKeun
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaButton gunaButton10;
+        private Guna.UI.WinForms.GunaLabel User;
+        private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel1;
     }
 }
