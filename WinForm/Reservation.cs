@@ -353,21 +353,59 @@ namespace Aplikasi_TiketKeun.WinForm
 
             int CODE = int.Parse(new String(stringChars));
             int CustomerID = int.Parse(new String(CSID));
+            int RoomNumber = 0;
+            int RoomID = 0;
+            int RoomFloor = 0;
+            int PriceRoom = 0;
+            foreach (DataGridViewRow dgvRow in dataGridView4.Rows)
+            {
+                RoomNumber = int.Parse(dgvRow.Cells["RoomNumber"].Value.ToString());
+                RoomFloor = int.Parse(dgvRow.Cells["RoomFloor"].Value.ToString());
+                RoomID = int.Parse(dgvRow.Cells["RoomID"].Value.ToString());
+                MessageBox.Show(RoomID.ToString());
+                PriceRoom = int.Parse(dgvRow.Cells["RoomPrice"].Value.ToString());
 
+            }
             MySqlConnection conn = new MySqlConnection(SQLConn);
             conn.Open();
             try
             {
                 string Query = "INSERT INTO reservation(ID, DateTime, EmployeeID, CustomerID, Code) VALUES (NULL,@DateTime,@EmployeeID,@CustomerID,@Code)";
-     
+                //string AddCustomer = "INSERT INTO customer SET Name=@Name,PhoneNumber=@PhoneNumber";
+                string AddCustomer = "INSERT INTO customer (ID,CustomerID, Name, NIK, Email, Gender, PhoneNumber, Age) VALUES (NULL,@CSID,@Name, '', '', '', @PhoneNumber, 0)";
+                string getResID = "SELECT ID FROM reservation WHERE Code=@Code";
+                MySqlCommand getRID = new MySqlCommand(getResID, conn);
+                getRID.Parameters.AddWithValue("@Code",CODE);
+                getRID.ExecuteNonQuery();
+                MySqlDataReader ReadRID;
+                ReadRID = getRID.ExecuteReader();
+                int PIDResRoom = 0;
+                while (ReadRID.Read())
+                {
+                    PIDResRoom = int.Parse(ReadRID["ReservationID"].ToString());  
+                }
+                string ReservationRoom = "UPDATE reservationroom SET RoomID=@RoomID,RoomPrice=@RoomPrice WHERE ReservationID=@ResID";
+                conn.Close();
+                conn.Open();
                 MySqlCommand cmd = new MySqlCommand(Query,conn);
+                MySqlCommand AddCS = new MySqlCommand(AddCustomer, conn);
+                MySqlCommand UpdateRID = new MySqlCommand(ReservationRoom, conn);
+                UpdateRID.Parameters.AddWithValue("@RoomID", RoomID);
+                UpdateRID.Parameters.AddWithValue("RoomPrice", PriceRoom);
+                UpdateRID.Parameters.AddWithValue("@ResID", PIDResRoom);
+                UpdateRID.ExecuteNonQuery();
                 int EmployeeID = int.Parse(Login.GetUserID);
                 var date = Convert.ToDateTime(DateTime.Text).ToString("yyyy-MM-dd");
                 cmd.Parameters.AddWithValue("@DateTime",date);
                 cmd.Parameters.AddWithValue("@EmployeeID",EmployeeID);
                 cmd.Parameters.AddWithValue("@CustomerID",CustomerID);
                 cmd.Parameters.AddWithValue("@Code",CODE);
-                if (cmd.ExecuteNonQuery() > 0)
+                AddCS.Parameters.AddWithValue("@Name", NameBox.Text);
+                AddCS.Parameters.AddWithValue("@PhoneNumber", PhoneNumber.Text);
+                AddCS.Parameters.AddWithValue("@CSID", CustomerID);
+
+
+                if (cmd.ExecuteNonQuery() > 0 && AddCS.ExecuteNonQuery()>0)
                 {
                     MessageBox.Show("Reservasi Berhasil");
 
@@ -382,6 +420,11 @@ namespace Aplikasi_TiketKeun.WinForm
                 MessageBox.Show(ex.Message);
 
             }
+
+        }
+
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

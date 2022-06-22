@@ -464,6 +464,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(339, 150);
             this.dataGridView4.TabIndex = 18;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // RoomID
             // 
