@@ -59,6 +59,16 @@ namespace Aplikasi_TiketKeun
         private void Beranda_Load(object sender, EventArgs e)
         {
             User.Text = Login.GetUserName;
+            int UserID = int.Parse(Login.GetUserID);
+            if (UserID != 1)
+            {
+                gunaButton11.Visible = false;
+                gunaButton3.Visible = false;
+                gunaButton12.Visible = false;
+            } else
+            {
+
+            }
         }
 
         private void gunaButton11_Click(object sender, EventArgs e)
@@ -123,5 +133,19 @@ namespace Aplikasi_TiketKeun
         {
 
         }
+
+        private void gunaButton3_Click_1(object sender, EventArgs e)
+        {
+            new HouseKeeperSupervisor().Show();
+            this.Hide();
+        }
+
+        private void gunaButton12_Click_1(object sender, EventArgs e)
+        {
+            new HouseKeeper().Show();
+            this.Hide();
+        }
+
+        
     }
 }

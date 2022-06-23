@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 19, 2022 at 02:16 PM
+-- Host: localhost:3306
+-- Generation Time: Jun 23, 2022 at 05:08 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -71,6 +71,7 @@ CREATE TABLE `cleaningroomitem` (
 
 CREATE TABLE `customer` (
   `ID` int(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `NIK` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -78,6 +79,13 @@ CREATE TABLE `customer` (
   `PhoneNumber` varchar(50) NOT NULL,
   `Age` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`ID`, `CustomerID`, `Name`, `NIK`, `Email`, `Gender`, `PhoneNumber`, `Age`) VALUES
+(1, 33021, 'Ujang Kasep', '892789312128', 'test@gmail.com', 'L', '812907318216', 30);
 
 -- --------------------------------------------------------
 
@@ -103,7 +111,8 @@ CREATE TABLE `employee` (
 INSERT INTO `employee` (`ID`, `Username`, `Password`, `Name`, `Email`, `Address`, `DateOfBirth`, `JobID`) VALUES
 (1, 'Admin', '12345', 'Admin', 'Admin@gmail.com', 'Cimahi', '2022-06-16', 1),
 (2, 'HouseKeeper', '12345', 'House Keeper', 'housekeeper@gmail.com', 'Cimahi', '2022-06-16', 2),
-(3, 'keeper', '12345', 'Keeper', 'keeper@gmail.com', 'Jakarta', '2019-07-25', 3);
+(3, 'keeper', '12345', 'Keeper', 'keeper@gmail.com', 'Jakarta', '2019-07-25', 3),
+(4, 'FrontOffice', '12345', 'Front Office', 'Frontoffice@gmail.com', 'Cimahi', '2022-06-16', 4);
 
 -- --------------------------------------------------------
 
@@ -163,6 +172,13 @@ CREATE TABLE `reservation` (
   `Code` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reservation`
+--
+
+INSERT INTO `reservation` (`ID`, `DateTime`, `EmployeeID`, `CustomerID`, `Code`) VALUES
+(1, '2022-06-18', 1, 33021, 29418);
+
 -- --------------------------------------------------------
 
 --
@@ -192,8 +208,16 @@ CREATE TABLE `reservationroom` (
   `DurationNight` int(11) NOT NULL,
   `RoomPrice` int(11) NOT NULL,
   `CheckInDateTime` datetime NOT NULL,
-  `CheckOutDateTime` datetime NOT NULL
+  `CheckOutDateTime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reservationroom`
+--
+
+INSERT INTO `reservationroom` (`ID`, `ReservationID`, `RoomID`, `StartDateTime`, `DurationNight`, `RoomPrice`, `CheckInDateTime`, `CheckOutDateTime`) VALUES
+(1, 1, 2, '2022-06-18', 3, 350000, '2022-06-18 00:00:00', NULL),
+(2, 1, 1, '2022-06-18', 3, 200000, '2022-06-18 00:00:00', '2022-06-18 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -209,6 +233,16 @@ CREATE TABLE `reservation_request_item` (
   `TotalPrice` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `reservation_request_item`
+--
+
+INSERT INTO `reservation_request_item` (`ID`, `ReservationRoomID`, `ItemID`, `Qty`, `TotalPrice`) VALUES
+(1, 4, 1, 2, 100000),
+(2, 7, 1, 1, 50000),
+(3, 1, 1, 2, 100000),
+(4, 2, 1, 2, 100000);
+
 -- --------------------------------------------------------
 
 --
@@ -217,7 +251,7 @@ CREATE TABLE `reservation_request_item` (
 
 CREATE TABLE `room` (
   `ID` int(11) NOT NULL,
-  `RoomTypeID` varchar(100) NOT NULL,
+  `RoomTypeID` int(10) NOT NULL,
   `RoomNumber` varchar(50) NOT NULL,
   `RoomFloor` varchar(50) NOT NULL,
   `Description` text NOT NULL
@@ -228,8 +262,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`ID`, `RoomTypeID`, `RoomNumber`, `RoomFloor`, `Description`) VALUES
-(1, 'Double Bed Standard', '24', '3', 'Lengkap dengan TV 32 Inci'),
-(2, 'Premium 2 Kasur', '25', '3', 'Lengkap dengan TV 32 Inci dan Wifi');
+(1, 1, '1', '1', 'Double bed cover dilengkapi dengan TV 22 Inch'),
+(2, 2, '2', '1', 'Double bed cover Super dilengkapi dengan TV 32 Inci');
 
 -- --------------------------------------------------------
 
@@ -249,9 +283,8 @@ CREATE TABLE `roomtype` (
 --
 
 INSERT INTO `roomtype` (`ID`, `Name`, `Capacity`, `RoomPrice`) VALUES
-(1, 'Double Bed Standard', 4, 250000),
-(2, 'Premium 2 Kasur', 5, 350000),
-(6, 'Standard 1 Bed', 1, 150000);
+(1, 'Double bed cover biasa', 3, 200000),
+(2, 'Double bed cover Super', 5, 350000);
 
 --
 -- Indexes for dumped tables
@@ -276,6 +309,12 @@ ALTER TABLE `cleaningroomitem`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
@@ -285,6 +324,12 @@ ALTER TABLE `employee`
 -- Indexes for table `item`
 --
 ALTER TABLE `item`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `itemstatus`
+--
+ALTER TABLE `itemstatus`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -303,7 +348,10 @@ ALTER TABLE `reservation`
 -- Indexes for table `reservationcheckout`
 --
 ALTER TABLE `reservationcheckout`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ItemStatusID` (`ItemStatusID`),
+  ADD KEY `ItemID` (`ItemID`),
+  ADD KEY `ReservationRoomID` (`ReservationRoomID`);
 
 --
 -- Indexes for table `reservationroom`
@@ -321,7 +369,8 @@ ALTER TABLE `reservation_request_item`
 -- Indexes for table `room`
 --
 ALTER TABLE `room`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `RoomTypeID` (`RoomTypeID`);
 
 --
 -- Indexes for table `roomtype`
@@ -352,6 +401,12 @@ ALTER TABLE `cleaningroomitem`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
@@ -364,6 +419,12 @@ ALTER TABLE `item`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `itemstatus`
+--
+ALTER TABLE `itemstatus`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `job`
 --
 ALTER TABLE `job`
@@ -373,7 +434,7 @@ ALTER TABLE `job`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reservationcheckout`
@@ -385,13 +446,13 @@ ALTER TABLE `reservationcheckout`
 -- AUTO_INCREMENT for table `reservationroom`
 --
 ALTER TABLE `reservationroom`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `reservation_request_item`
 --
 ALTER TABLE `reservation_request_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `room`
@@ -403,7 +464,25 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `roomtype`
 --
 ALTER TABLE `roomtype`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `reservationcheckout`
+--
+ALTER TABLE `reservationcheckout`
+  ADD CONSTRAINT `reservationcheckout_ibfk_1` FOREIGN KEY (`ItemStatusID`) REFERENCES `itemstatus` (`ID`),
+  ADD CONSTRAINT `reservationcheckout_ibfk_2` FOREIGN KEY (`ItemID`) REFERENCES `item` (`ID`),
+  ADD CONSTRAINT `reservationcheckout_ibfk_3` FOREIGN KEY (`ReservationRoomID`) REFERENCES `reservation` (`ID`);
+
+--
+-- Constraints for table `room`
+--
+ALTER TABLE `room`
+  ADD CONSTRAINT `room_ibfk_1` FOREIGN KEY (`RoomTypeID`) REFERENCES `roomtype` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

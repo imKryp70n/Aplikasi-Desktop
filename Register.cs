@@ -51,6 +51,9 @@ namespace Aplikasi_TiketKeun
                             } else if (PekerjaanCBox.Text == "House Keeper")
                             {
                                 JobID = 3;
+                            } else if (PekerjaanCBox.Text == "Front Office")
+                            {
+                                JobID = 4;
                             } 
                             else 
                             {

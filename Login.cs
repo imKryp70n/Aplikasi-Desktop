@@ -97,7 +97,7 @@ namespace Aplikasi_TiketKeun
                         if (Role == "1")
                         {
                             GetUserName = NameUser;
-                            
+
                             MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
                             //Thread.Sleep(3000);
@@ -105,8 +105,8 @@ namespace Aplikasi_TiketKeun
                             Beranda MainForm = new Beranda();
                             MainForm.Show();
 
-                            
-                            
+
+
                         }
                         else if (Role == "2")
                         {
@@ -120,11 +120,23 @@ namespace Aplikasi_TiketKeun
                             this.Hide();
                             new HouseKeeper().Show();
 
-                        } else
+                        }
+                        else if (Role == "4")
+                        {
+                            GetUserName = NameUser;
+
+                            MessageBox.Show("Login Berhasil", "Taufik Mulyana", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                            //Thread.Sleep(3000);
+
+                            Beranda MainForm = new Beranda();
+                            MainForm.Show();
+                        }
+                        else
                         {
                             MessageBox.Show("Login Gagal", "TiketKeun", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
+                        }
                     
 
                 }

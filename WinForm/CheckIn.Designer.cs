@@ -36,8 +36,8 @@ namespace Aplikasi_TiketKeun.WinForm
             this.NIKBox = new Guna.UI.WinForms.GunaTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.UsiaBox = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaRadioButton2 = new Guna.UI.WinForms.GunaRadioButton();
-            this.gunaRadioButton1 = new Guna.UI.WinForms.GunaRadioButton();
+            this.FemaleRB = new Guna.UI.WinForms.GunaRadioButton();
+            this.MaleRB = new Guna.UI.WinForms.GunaRadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.EmailBox = new Guna.UI.WinForms.GunaTextBox();
@@ -88,8 +88,8 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaGroupBox3.Controls.Add(this.NIKBox);
             this.gunaGroupBox3.Controls.Add(this.label6);
             this.gunaGroupBox3.Controls.Add(this.UsiaBox);
-            this.gunaGroupBox3.Controls.Add(this.gunaRadioButton2);
-            this.gunaGroupBox3.Controls.Add(this.gunaRadioButton1);
+            this.gunaGroupBox3.Controls.Add(this.FemaleRB);
+            this.gunaGroupBox3.Controls.Add(this.MaleRB);
             this.gunaGroupBox3.Controls.Add(this.label5);
             this.gunaGroupBox3.Controls.Add(this.label4);
             this.gunaGroupBox3.Controls.Add(this.EmailBox);
@@ -129,6 +129,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaButton1.TabIndex = 18;
             this.gunaButton1.Text = "Check in";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
             // label7
             // 
@@ -184,31 +185,33 @@ namespace Aplikasi_TiketKeun.WinForm
             this.UsiaBox.Size = new System.Drawing.Size(188, 30);
             this.UsiaBox.TabIndex = 11;
             // 
-            // gunaRadioButton2
+            // FemaleRB
             // 
-            this.gunaRadioButton2.BaseColor = System.Drawing.SystemColors.Control;
-            this.gunaRadioButton2.CheckedOffColor = System.Drawing.Color.Gray;
-            this.gunaRadioButton2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaRadioButton2.FillColor = System.Drawing.Color.White;
-            this.gunaRadioButton2.ForeColor = System.Drawing.Color.Black;
-            this.gunaRadioButton2.Location = new System.Drawing.Point(256, 156);
-            this.gunaRadioButton2.Name = "gunaRadioButton2";
-            this.gunaRadioButton2.Size = new System.Drawing.Size(65, 20);
-            this.gunaRadioButton2.TabIndex = 10;
-            this.gunaRadioButton2.Text = "Wanita";
+            this.FemaleRB.BaseColor = System.Drawing.SystemColors.Control;
+            this.FemaleRB.CheckedOffColor = System.Drawing.Color.Gray;
+            this.FemaleRB.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.FemaleRB.FillColor = System.Drawing.Color.White;
+            this.FemaleRB.ForeColor = System.Drawing.Color.Black;
+            this.FemaleRB.Location = new System.Drawing.Point(256, 156);
+            this.FemaleRB.Name = "FemaleRB";
+            this.FemaleRB.Size = new System.Drawing.Size(65, 20);
+            this.FemaleRB.TabIndex = 10;
+            this.FemaleRB.Text = "Wanita";
+            this.FemaleRB.CheckedChanged += new System.EventHandler(this.FemaleRB_CheckedChanged);
             // 
-            // gunaRadioButton1
+            // MaleRB
             // 
-            this.gunaRadioButton1.BaseColor = System.Drawing.SystemColors.Control;
-            this.gunaRadioButton1.CheckedOffColor = System.Drawing.Color.Gray;
-            this.gunaRadioButton1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaRadioButton1.FillColor = System.Drawing.Color.White;
-            this.gunaRadioButton1.ForeColor = System.Drawing.Color.Black;
-            this.gunaRadioButton1.Location = new System.Drawing.Point(151, 156);
-            this.gunaRadioButton1.Name = "gunaRadioButton1";
-            this.gunaRadioButton1.Size = new System.Drawing.Size(50, 20);
-            this.gunaRadioButton1.TabIndex = 9;
-            this.gunaRadioButton1.Text = "Pria";
+            this.MaleRB.BaseColor = System.Drawing.SystemColors.Control;
+            this.MaleRB.CheckedOffColor = System.Drawing.Color.Gray;
+            this.MaleRB.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.MaleRB.FillColor = System.Drawing.Color.White;
+            this.MaleRB.ForeColor = System.Drawing.Color.Black;
+            this.MaleRB.Location = new System.Drawing.Point(151, 156);
+            this.MaleRB.Name = "MaleRB";
+            this.MaleRB.Size = new System.Drawing.Size(50, 20);
+            this.MaleRB.TabIndex = 9;
+            this.MaleRB.Text = "Pria";
+            this.MaleRB.CheckedChanged += new System.EventHandler(this.gunaRadioButton1_CheckedChanged);
             // 
             // label5
             // 
@@ -318,6 +321,9 @@ namespace Aplikasi_TiketKeun.WinForm
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 37);
@@ -405,8 +411,8 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaTextBox NIKBox;
         private System.Windows.Forms.Label label6;
         private Guna.UI.WinForms.GunaTextBox UsiaBox;
-        private Guna.UI.WinForms.GunaRadioButton gunaRadioButton2;
-        private Guna.UI.WinForms.GunaRadioButton gunaRadioButton1;
+        private Guna.UI.WinForms.GunaRadioButton FemaleRB;
+        private Guna.UI.WinForms.GunaRadioButton MaleRB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaTextBox EmailBox;

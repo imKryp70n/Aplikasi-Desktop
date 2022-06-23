@@ -85,6 +85,7 @@ namespace Aplikasi_TiketKeun.WinForm
                     cmd.Parameters.AddWithValue("@RequirePrice", int.Parse(PriceBox.Text));
                     cmd.Parameters.AddWithValue("@CompensationFee", int.Parse(CompensationBox.Text));
                     cmd.ExecuteNonQuery();
+                    
                     MessageBox.Show("Item berhasil di update", "TiketKeun", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     DataTable Table = new DataTable();
                     MySqlDataAdapter DA = new MySqlDataAdapter(QueryItem, conn);

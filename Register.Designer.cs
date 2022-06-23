@@ -379,6 +379,7 @@ namespace Aplikasi_TiketKeun
             this.PekerjaanCBox.FormattingEnabled = true;
             this.PekerjaanCBox.Items.AddRange(new object[] {
             "Admin",
+            "Front Office",
             "House Keeper Supervisor",
             "House Keeper"});
             this.PekerjaanCBox.Location = new System.Drawing.Point(201, 338);
