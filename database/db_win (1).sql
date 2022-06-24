@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 23, 2022 at 05:08 PM
+-- Generation Time: Jun 24, 2022 at 05:06 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -71,7 +71,6 @@ CREATE TABLE `cleaningroomitem` (
 
 CREATE TABLE `customer` (
   `ID` int(11) NOT NULL,
-  `CustomerID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `NIK` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -84,8 +83,11 @@ CREATE TABLE `customer` (
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`ID`, `CustomerID`, `Name`, `NIK`, `Email`, `Gender`, `PhoneNumber`, `Age`) VALUES
-(1, 33021, 'Ujang Kasep', '892789312128', 'test@gmail.com', 'L', '812907318216', 30);
+INSERT INTO `customer` (`ID`, `Name`, `NIK`, `Email`, `Gender`, `PhoneNumber`, `Age`) VALUES
+(1, 'Admin', '', '', '', '3150154615454', 0),
+(2, '', '', '', '', '', 0),
+(3, '', '', '', '', '', 0),
+(4, '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -147,6 +149,13 @@ CREATE TABLE `itemstatus` (
   `Name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `itemstatus`
+--
+
+INSERT INTO `itemstatus` (`ID`, `Name`) VALUES
+(1, 'PECAH');
+
 -- --------------------------------------------------------
 
 --
@@ -177,7 +186,10 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`ID`, `DateTime`, `EmployeeID`, `CustomerID`, `Code`) VALUES
-(1, '2022-06-18', 1, 33021, 29418);
+(1, '2022-06-18', 1, 1, 28136),
+(2, '2022-06-18', 1, 2, 39594),
+(3, '2022-06-18', 1, 2, 23431),
+(4, '2022-06-18', 1, 2, 30322);
 
 -- --------------------------------------------------------
 
@@ -216,8 +228,12 @@ CREATE TABLE `reservationroom` (
 --
 
 INSERT INTO `reservationroom` (`ID`, `ReservationID`, `RoomID`, `StartDateTime`, `DurationNight`, `RoomPrice`, `CheckInDateTime`, `CheckOutDateTime`) VALUES
-(1, 1, 2, '2022-06-18', 3, 350000, '2022-06-18 00:00:00', NULL),
-(2, 1, 1, '2022-06-18', 3, 200000, '2022-06-18 00:00:00', '2022-06-18 00:00:00');
+(1, 1, 2, '2022-06-18', 1, 350000, '2022-06-18 00:00:00', NULL),
+(2, 1, 1, '2022-06-18', 1, 200000, '2022-06-18 00:00:00', '2022-06-18 00:00:00'),
+(3, 2, 1, '2022-06-18', 1, 200000, '2022-06-18 00:00:00', '2022-06-18 00:00:00'),
+(4, 3, 2, '2022-06-18', 1, 350000, '2022-06-18 00:00:00', '2022-06-18 00:00:00'),
+(5, 4, 2, '2022-06-18', 1, 350000, '2022-06-18 00:00:00', '2022-06-18 00:00:00'),
+(6, 4, 1, '2022-06-18', 1, 200000, '2022-06-18 00:00:00', '2022-06-18 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -238,10 +254,21 @@ CREATE TABLE `reservation_request_item` (
 --
 
 INSERT INTO `reservation_request_item` (`ID`, `ReservationRoomID`, `ItemID`, `Qty`, `TotalPrice`) VALUES
-(1, 4, 1, 2, 100000),
-(2, 7, 1, 1, 50000),
-(3, 1, 1, 2, 100000),
-(4, 2, 1, 2, 100000);
+(1, 1, 2, 1, 50000),
+(2, 2, 2, 1, 50000),
+(3, 3, 1, 1, 50000),
+(4, 3, 2, 1, 50000),
+(5, 4, 1, 1, 30000),
+(6, 4, 2, 1, 30000),
+(7, 4, 6, 1, 30000),
+(8, 5, 1, 1, 50000),
+(9, 5, 2, 1, 50000),
+(10, 5, 6, 1, 50000),
+(11, 5, 1, 1, 50000),
+(12, 6, 1, 1, 50000),
+(13, 6, 2, 1, 50000),
+(14, 6, 6, 1, 50000),
+(15, 6, 1, 1, 50000);
 
 -- --------------------------------------------------------
 
@@ -318,7 +345,8 @@ ALTER TABLE `customer`
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `JobID` (`JobID`);
 
 --
 -- Indexes for table `item`
@@ -342,7 +370,8 @@ ALTER TABLE `job`
 -- Indexes for table `reservation`
 --
 ALTER TABLE `reservation`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `CustomerID` (`CustomerID`);
 
 --
 -- Indexes for table `reservationcheckout`
@@ -357,13 +386,15 @@ ALTER TABLE `reservationcheckout`
 -- Indexes for table `reservationroom`
 --
 ALTER TABLE `reservationroom`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ReservationID` (`ReservationID`);
 
 --
 -- Indexes for table `reservation_request_item`
 --
 ALTER TABLE `reservation_request_item`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `ReservationRoomID` (`ReservationRoomID`);
 
 --
 -- Indexes for table `room`
@@ -404,7 +435,7 @@ ALTER TABLE `cleaningroomitem`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -422,7 +453,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT for table `itemstatus`
 --
 ALTER TABLE `itemstatus`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `job`
@@ -434,7 +465,7 @@ ALTER TABLE `job`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `reservationcheckout`
@@ -446,13 +477,13 @@ ALTER TABLE `reservationcheckout`
 -- AUTO_INCREMENT for table `reservationroom`
 --
 ALTER TABLE `reservationroom`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reservation_request_item`
 --
 ALTER TABLE `reservation_request_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `room`
@@ -475,8 +506,7 @@ ALTER TABLE `roomtype`
 --
 ALTER TABLE `reservationcheckout`
   ADD CONSTRAINT `reservationcheckout_ibfk_1` FOREIGN KEY (`ItemStatusID`) REFERENCES `itemstatus` (`ID`),
-  ADD CONSTRAINT `reservationcheckout_ibfk_2` FOREIGN KEY (`ItemID`) REFERENCES `item` (`ID`),
-  ADD CONSTRAINT `reservationcheckout_ibfk_3` FOREIGN KEY (`ReservationRoomID`) REFERENCES `reservation` (`ID`);
+  ADD CONSTRAINT `reservationcheckout_ibfk_2` FOREIGN KEY (`ItemID`) REFERENCES `item` (`ID`);
 
 --
 -- Constraints for table `room`

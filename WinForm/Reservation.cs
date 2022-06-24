@@ -257,19 +257,20 @@ namespace Aplikasi_TiketKeun.WinForm
                 cmd.ExecuteNonQuery();
                 MySqlDataReader row;
                 row = cmd.ExecuteReader();
-
+                int ItemPID = 0;
                 // --------------------------- MENAMBAHKAN HARGA BARANG KE DATA GRID ------------------------------
                 while (row.Read())
                 {
                     Price = int.Parse( row["RequirePrice"].ToString());
                     Total = Price * QtyBox.Value;
+                    ItemPID = int.Parse( row["ID"].ToString());
+
                     /*JumlahItem = QtyBox.Value;*/
-                    ItemID = int.Parse(row["ID"].ToString());
-                     
+                    //MessageBox.Show(ItemID.ToString());
                 }
-                
+
                 //cmd.Parameters.AddWithValue("@Name");
-                string[] InputData = {"",ItemCB.Text, QtyBox.Value.ToString(), RoomNumberBox.Text, Total.ToString()};
+                string[] InputData = {"",ItemPID.ToString(),ItemCB.Text, QtyBox.Value.ToString(), RoomNumberBox.Text, Total.ToString()};
                 dataGridView5.Rows.Add(InputData);
 
                 // --------------------------- MENAMBAHKAN HARGA ITEM KE TOTAL BAYAR ----------------------------
@@ -368,106 +369,154 @@ namespace Aplikasi_TiketKeun.WinForm
             }
 
             MySqlConnection conn = new MySqlConnection(SQLConn);
-            
-            try
-            {
+
+            /*try
+            {*/
                 string Query = "INSERT INTO reservation(ID, DateTime, EmployeeID, CustomerID, Code) VALUES (NULL,@DateTime,@EmployeeID,@CustomerID,@Code)";
                 conn.Open();
 
+
+                string GetCustomerID = "SELECT ID FROM customer WHERE Name=@Name AND PhoneNumber=@PhoneNumber";
                 //string AddCustomer = "INSERT INTO customer SET Name=@Name,PhoneNumber=@PhoneNumber";
-                string AddCustomer = "INSERT INTO customer (ID,CustomerID, Name, NIK, Email, Gender, PhoneNumber, Age) VALUES (NULL,@CSID,@Name, '', '', '', @PhoneNumber, 0)";
+                string AddCustomer = "INSERT INTO customer (ID, Name, NIK, Email, Gender, PhoneNumber, Age) VALUES (NULL,@Name, '', '', '', @PhoneNumber, 0)";
                 string InsertDataResRoom = "INSERT INTO reservationroom(ID, ReservationID, RoomID, StartDateTime, DurationNight, RoomPrice, CheckInDateTime, CheckOutDateTime) VALUES (NULL,@ReservationID,@RoomID,@StartDateTime,@DurationNight,@RoomPrice,@CheckInDateTime,@CheckOutDateTime)";
-                MySqlCommand cmd = new MySqlCommand(Query,conn);
                 MySqlCommand AddCS = new MySqlCommand(AddCustomer, conn);
-                int EmployeeID = int.Parse(Login.GetUserID);
-                var date = Convert.ToDateTime(DateTime.Text).ToString("yyyy-MM-dd");
-                cmd.Parameters.AddWithValue("@DateTime",date);
-                cmd.Parameters.AddWithValue("@EmployeeID",EmployeeID);
-                cmd.Parameters.AddWithValue("@CustomerID",CustomerID);
-                cmd.Parameters.AddWithValue("@Code",CODE);
+
                 AddCS.Parameters.AddWithValue("@Name", NameBox.Text);
                 AddCS.Parameters.AddWithValue("@PhoneNumber", PhoneNumber.Text);
-                AddCS.Parameters.AddWithValue("@CSID", CustomerID);
+                //AddCS.Parameters.AddWithValue("@CSID", CustomerID);
+                AddCS.ExecuteNonQuery();
+                conn.Close();
+                // ----------------------------------------------------------------------------
+                conn.Open();
+                MySqlCommand cmdGCSID = new MySqlCommand(GetCustomerID, conn);
+                cmdGCSID.Parameters.AddWithValue("@Name", NameBox.Text);
+                cmdGCSID.Parameters.AddWithValue("@PhoneNumber", PhoneNumber.Text);
+                cmdGCSID.ExecuteNonQuery();
+                MySqlDataReader RowCostumerID;
+                RowCostumerID = cmdGCSID.ExecuteReader();
+                RowCostumerID.Read();
+                var GetNewCustomerID = RowCostumerID["ID"].ToString();
+                //MessageBox.Show(test.ToString());
+                conn.Close();
+                // ----------------------------------------------------------------------------
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(Query, conn);
+                int EmployeeID = int.Parse(Login.GetUserID);
+                var date = Convert.ToDateTime(DateTime.Text).ToString("yyyy-MM-dd");
+                cmd.Parameters.AddWithValue("@DateTime", date);
+                cmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+                cmd.Parameters.AddWithValue("@CustomerID", int.Parse(GetNewCustomerID));
+                cmd.Parameters.AddWithValue("@Code", CODE);
 
 
+
+            // ---------------------------------------------------------------------------
+
+
+            if (cmd.ExecuteNonQuery() > 0)
+            {
+
+                /*string QueryGetItemResID = "SELECT ID FROM reservationroom GROUP BY ID DESC LIMIT 1";
+                MySqlCommand QGItemID = new MySqlCommand(QueryGetItemResID, conn);
+                QGItemID.ExecuteNonQuery();
+                MySqlDataReader RowItemID;
+                RowItemID = QGItemID.ExecuteReader();*/
+
+                /*RowItemID.Read();
+                int GetNewItemID = int.Parse(RowItemID["ID"].ToString());*/
                 
+                //MessageBox.Show(GetNewItemID.ToString());
 
-                // ---------------------------------------------------------------------------
-
-
-                if (cmd.ExecuteNonQuery() > 0 && AddCS.ExecuteNonQuery()>0)
+                conn.Close();
+                MessageBox.Show("Reservasi Berhasil");
+                
+                foreach (DataGridViewRow row in dataGridView4.Rows)
                 {
-                    MessageBox.Show("Reservasi Berhasil");
-                    foreach (DataGridViewRow row in dataGridView4.Rows)
+                    conn.Open();
+
+
+                    RoomID = int.Parse(row.Cells["RoomID"].Value.ToString());
+                    RoomNum = int.Parse(row.Cells["RoomNumber"].Value.ToString());
+                    RoomFloor = int.Parse(row.Cells["RoomFloor"].Value.ToString());
+                    //MessageBox.Show(RoomID.ToString());
+                    PriceRoom = int.Parse(row.Cells["RoomPrice"].Value.ToString());
+                    string QueryGetID = "SELECT ID FROM reservation GROUP BY ID DESC LIMIT 1";
+
+                    MySqlCommand QGID = new MySqlCommand(QueryGetID, conn);
+                    QGID.ExecuteNonQuery();
+                    MySqlDataReader RowID;
+                    RowID = QGID.ExecuteReader();
+                    RowID.Read();
+                    var GetNewResID = RowID["ID"];
+                    //MessageBox.Show(test.ToString());
+                    conn.Close();
+                    conn.Open();
+                    MySqlCommand cmdInsertDataResRoom = new MySqlCommand(InsertDataResRoom, conn);
+                    var StartDate = Convert.ToDateTime(DateTime.Text).ToString("yyyy-MM-dd");
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@ReservationID", GetNewResID);
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@RoomID", RoomID);
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@StartDateTime", StartDate);
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@DurationNight", MalamBox.Value);
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@RoomPrice", PriceRoom);
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@CheckInDateTime", StartDate);
+                    cmdInsertDataResRoom.Parameters.AddWithValue("@CheckOutDateTime", StartDate);
+                    cmdInsertDataResRoom.ExecuteNonQuery();
+
+
+                    // -------------------------------- GET ID RESERVATION ROOM FOR ADDITIONAL ITEM-------------------------------
+                    
+
+                    
+
+                    conn.Close();
+                    conn.Open();
+                    string QueryGetItemResID = "SELECT ID FROM reservationroom GROUP BY ID DESC LIMIT 1";
+                    MySqlCommand QGItemID = new MySqlCommand(QueryGetItemResID, conn);
+                    QGItemID.ExecuteNonQuery();
+                    MySqlDataReader RowItemID;
+                    RowItemID = QGItemID.ExecuteReader();
+                    int GetNewItemID = 0;
+                    if (RowItemID.Read())
                     {
+                        GetNewItemID = int.Parse(RowItemID["ID"].ToString());
+                    }
+                    conn.Close();
+                    conn.Open();
+                    // ------------------------------- INSERT ADDITIONAL ITEM --------------------------------
 
-                        RoomID = int.Parse(row.Cells["RoomID"].Value.ToString());
-                        RoomNum = int.Parse(row.Cells["RoomNumber"].Value.ToString());
-                        RoomFloor = int.Parse(row.Cells["RoomFloor"].Value.ToString());
-                        //MessageBox.Show(RoomID.ToString());
-                        PriceRoom = int.Parse(row.Cells["RoomPrice"].Value.ToString());
-                        string QueryGetID = "SELECT ID FROM reservation GROUP BY ID DESC LIMIT 1";
-                        MySqlCommand QGID = new MySqlCommand(QueryGetID, conn);
-                        QGID.ExecuteNonQuery();
-                        MySqlDataReader RowID;
-                        RowID = QGID.ExecuteReader();
-                        RowID.Read();
-                        var GetNewResID = RowID["ID"];
-                        //MessageBox.Show(test.ToString());
-                        conn.Close();
-                        conn.Open();
-                        MySqlCommand cmdInsertDataResRoom = new MySqlCommand(InsertDataResRoom, conn);
-                        var StartDate = Convert.ToDateTime(DateTime.Text).ToString("yyyy-MM-dd");
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@ReservationID", GetNewResID);
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@RoomID", RoomID);
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@StartDateTime", StartDate);
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@DurationNight", MalamBox.Value);
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@RoomPrice", PriceRoom);
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@CheckInDateTime", StartDate);
-                        cmdInsertDataResRoom.Parameters.AddWithValue("@CheckOutDateTime", StartDate);
-                        cmdInsertDataResRoom.ExecuteNonQuery();
+                    foreach (DataGridViewRow rowAddItem in dataGridView5.Rows)
+                    {
+                        ItemID = int.Parse(dataGridView5.Rows[rowAddItem.Index].Cells["ItemPID"].FormattedValue.ToString());
 
-
-                        // ---------------------------------------------------------------
-
-                        string QueryGetItemResID = "SELECT ID FROM reservationroom GROUP BY ID DESC LIMIT 1";
-                        MySqlCommand QGItemID = new MySqlCommand(QueryGetItemResID, conn);
-                        QGItemID.ExecuteNonQuery();
-                        MySqlDataReader RowItemID;
-                        RowItemID = QGItemID.ExecuteReader();
-                        RowItemID.Read();
-                        int GetNewItemID = int.Parse(RowItemID["ID"].ToString());
-                        //MessageBox.Show(GetNewItemID.ToString());
-                        conn.Close();
-
-                        // ------------------------------- INSERT ADDITIONAL ITEM --------------------------------
-
-
-                        conn.Open();
                         string QueryAddItem = "INSERT INTO reservation_request_item(ID, ReservationRoomID, ItemID, Qty, TotalPrice) VALUES (NULL,@ReservationRID,@ItemID,@Qty,@TotalPrice)";
                         MySqlCommand cmdAddItem = new MySqlCommand(QueryAddItem, conn);
                         cmdAddItem.Parameters.AddWithValue("@ReservationRID", GetNewItemID);
                         cmdAddItem.Parameters.AddWithValue("@itemID", ItemID);
                         cmdAddItem.Parameters.AddWithValue("@Qty", QtyBox.Value);
                         cmdAddItem.Parameters.AddWithValue("@TotalPrice", Total);
+
+
                         cmdAddItem.ExecuteNonQuery();
-
-
-                        // ---------------------------------------------------------------
-
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Reservasi gagal");
+                        //conn.Close();                        
+                    // ---------------------------------------------------------------
 
+                    conn.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Reservasi gagal");
 
-            } catch (Exception ex)
+            }
+
+            /*}
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
-            }
+            }*/
 
         }
 

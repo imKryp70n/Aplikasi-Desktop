@@ -45,11 +45,6 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.DeleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HargaItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +71,12 @@ namespace Aplikasi_TiketKeun.WinForm
             this.DateTime = new Guna.UI.WinForms.GunaDateTimePicker();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.DeleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ItemPID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemQTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HargaItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
@@ -384,6 +385,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DeleteItem,
+            this.ItemPID,
             this.ItemName,
             this.ItemQTY,
             this.ItemRoom,
@@ -395,44 +397,6 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView5.Size = new System.Drawing.Size(320, 114);
             this.dataGridView5.TabIndex = 3;
             this.dataGridView5.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellContentClick);
-            // 
-            // DeleteItem
-            // 
-            this.DeleteItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DeleteItem.HeaderText = "Del";
-            this.DeleteItem.Name = "DeleteItem";
-            this.DeleteItem.ReadOnly = true;
-            this.DeleteItem.Width = 39;
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "Item Name";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 112;
-            // 
-            // ItemQTY
-            // 
-            this.ItemQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ItemQTY.HeaderText = "Item QTY";
-            this.ItemQTY.Name = "ItemQTY";
-            this.ItemQTY.ReadOnly = true;
-            this.ItemQTY.Width = 98;
-            // 
-            // ItemRoom
-            // 
-            this.ItemRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ItemRoom.HeaderText = "Room";
-            this.ItemRoom.Name = "ItemRoom";
-            this.ItemRoom.ReadOnly = true;
-            this.ItemRoom.Width = 77;
-            // 
-            // HargaItem
-            // 
-            this.HargaItem.HeaderText = "Harga";
-            this.HargaItem.Name = "HargaItem";
-            this.HargaItem.ReadOnly = true;
-            this.HargaItem.Width = 77;
             // 
             // gunaLabel2
             // 
@@ -775,6 +739,52 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 6;
             // 
+            // DeleteItem
+            // 
+            this.DeleteItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DeleteItem.HeaderText = "Del";
+            this.DeleteItem.Name = "DeleteItem";
+            this.DeleteItem.ReadOnly = true;
+            this.DeleteItem.Width = 39;
+            // 
+            // ItemPID
+            // 
+            this.ItemPID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ItemPID.HeaderText = "ID";
+            this.ItemPID.Name = "ItemPID";
+            this.ItemPID.ReadOnly = true;
+            this.ItemPID.Width = 50;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 112;
+            // 
+            // ItemQTY
+            // 
+            this.ItemQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ItemQTY.HeaderText = "Item QTY";
+            this.ItemQTY.Name = "ItemQTY";
+            this.ItemQTY.ReadOnly = true;
+            this.ItemQTY.Width = 98;
+            // 
+            // ItemRoom
+            // 
+            this.ItemRoom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ItemRoom.HeaderText = "Room";
+            this.ItemRoom.Name = "ItemRoom";
+            this.ItemRoom.ReadOnly = true;
+            this.ItemRoom.Width = 77;
+            // 
+            // HargaItem
+            // 
+            this.HargaItem.HeaderText = "Harga";
+            this.HargaItem.Name = "HargaItem";
+            this.HargaItem.ReadOnly = true;
+            this.HargaItem.Width = 77;
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -833,11 +843,6 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaButton gunaButton4;
         private Guna.UI.WinForms.GunaComboBox RoomNumberBox;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemQTY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HargaItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
@@ -848,5 +853,11 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaLabel gunaLabel11;
         private Guna.UI.WinForms.GunaTextBox PhoneNumber;
         private Guna.UI.WinForms.GunaLabel gunaLabel10;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemPID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemQTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HargaItem;
     }
 }

@@ -234,6 +234,7 @@ namespace Aplikasi_TiketKeun.WinForm
             this.Controls.Add(this.gunaGroupBox1);
             this.Name = "RequestAdditionalItem";
             this.Size = new System.Drawing.Size(793, 552);
+            this.Load += new System.EventHandler(this.RequestAdditionalItem_Load);
             this.gunaGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gunaGroupBox2.ResumeLayout(false);

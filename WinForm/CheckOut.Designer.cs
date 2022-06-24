@@ -31,18 +31,18 @@ namespace Aplikasi_TiketKeun.WinForm
         {
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DeleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
             this.ItemStatusCB = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.NomorRuanganCB = new Guna.UI.WinForms.GunaComboBox();
-            this.ItemCB = new Guna.UI.WinForms.GunaComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.QTYBox = new Guna.UI.WinForms.GunaNumeric();
             this.ReservationBTN = new Guna.UI.WinForms.GunaButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.DeleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ListItemBox = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gunaGroupBox2.SuspendLayout();
@@ -80,16 +80,23 @@ namespace Aplikasi_TiketKeun.WinForm
             this.dataGridView1.Size = new System.Drawing.Size(751, 135);
             this.dataGridView1.TabIndex = 0;
             // 
+            // DeleteItem
+            // 
+            this.DeleteItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.DeleteItem.HeaderText = "Hapus";
+            this.DeleteItem.Name = "DeleteItem";
+            this.DeleteItem.Width = 60;
+            // 
             // gunaGroupBox2
             // 
             this.gunaGroupBox2.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox2.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox2.BorderSize = 1;
+            this.gunaGroupBox2.Controls.Add(this.ListItemBox);
             this.gunaGroupBox2.Controls.Add(this.ItemStatusCB);
             this.gunaGroupBox2.Controls.Add(this.label1);
             this.gunaGroupBox2.Controls.Add(this.NomorRuanganCB);
-            this.gunaGroupBox2.Controls.Add(this.ItemCB);
             this.gunaGroupBox2.Controls.Add(this.label2);
             this.gunaGroupBox2.Controls.Add(this.QTYBox);
             this.gunaGroupBox2.Controls.Add(this.ReservationBTN);
@@ -150,25 +157,6 @@ namespace Aplikasi_TiketKeun.WinForm
             this.NomorRuanganCB.TabIndex = 20;
             this.NomorRuanganCB.SelectedIndexChanged += new System.EventHandler(this.NomorRuanganCB_SelectedIndexChanged);
             // 
-            // ItemCB
-            // 
-            this.ItemCB.BackColor = System.Drawing.Color.Transparent;
-            this.ItemCB.BaseColor = System.Drawing.Color.White;
-            this.ItemCB.BorderColor = System.Drawing.Color.Silver;
-            this.ItemCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ItemCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ItemCB.FocusedColor = System.Drawing.Color.Empty;
-            this.ItemCB.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ItemCB.ForeColor = System.Drawing.Color.Black;
-            this.ItemCB.FormattingEnabled = true;
-            this.ItemCB.Location = new System.Drawing.Point(270, 73);
-            this.ItemCB.Name = "ItemCB";
-            this.ItemCB.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.ItemCB.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.ItemCB.Size = new System.Drawing.Size(333, 26);
-            this.ItemCB.TabIndex = 22;
-            this.ItemCB.SelectedIndexChanged += new System.EventHandler(this.ItemCB_SelectedIndexChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -185,9 +173,10 @@ namespace Aplikasi_TiketKeun.WinForm
             this.QTYBox.BorderColor = System.Drawing.Color.Silver;
             this.QTYBox.ButtonColor = System.Drawing.Color.DodgerBlue;
             this.QTYBox.ButtonForeColor = System.Drawing.Color.White;
+            this.QTYBox.Enabled = false;
             this.QTYBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.QTYBox.ForeColor = System.Drawing.Color.Black;
-            this.QTYBox.Location = new System.Drawing.Point(270, 108);
+            this.QTYBox.Location = new System.Drawing.Point(270, 107);
             this.QTYBox.Maximum = ((long)(9999999));
             this.QTYBox.Minimum = ((long)(0));
             this.QTYBox.Name = "QTYBox";
@@ -267,12 +256,22 @@ namespace Aplikasi_TiketKeun.WinForm
             this.gunaButton1.Text = "Bayar";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // DeleteItem
+            // ListItemBox
             // 
-            this.DeleteItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.DeleteItem.HeaderText = "Hapus";
-            this.DeleteItem.Name = "DeleteItem";
-            this.DeleteItem.Width = 60;
+            this.ListItemBox.BaseColor = System.Drawing.Color.White;
+            this.ListItemBox.BorderColor = System.Drawing.Color.Silver;
+            this.ListItemBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ListItemBox.FocusedBaseColor = System.Drawing.Color.White;
+            this.ListItemBox.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.ListItemBox.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.ListItemBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ListItemBox.Location = new System.Drawing.Point(270, 71);
+            this.ListItemBox.Name = "ListItemBox";
+            this.ListItemBox.PasswordChar = '\0';
+            this.ListItemBox.SelectedText = "";
+            this.ListItemBox.Size = new System.Drawing.Size(333, 30);
+            this.ListItemBox.TabIndex = 25;
+            this.ListItemBox.TextChanged += new System.EventHandler(this.ListItemBox_TextChanged);
             // 
             // CheckOut
             // 
@@ -298,7 +297,6 @@ namespace Aplikasi_TiketKeun.WinForm
         private Guna.UI.WinForms.GunaComboBox ItemStatusCB;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaComboBox NomorRuanganCB;
-        private Guna.UI.WinForms.GunaComboBox ItemCB;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaNumeric QTYBox;
         private Guna.UI.WinForms.GunaButton ReservationBTN;
@@ -306,5 +304,6 @@ namespace Aplikasi_TiketKeun.WinForm
         private System.Windows.Forms.Label label4;
         private Guna.UI.WinForms.GunaButton gunaButton1;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteItem;
+        private Guna.UI.WinForms.GunaTextBox ListItemBox;
     }
 }

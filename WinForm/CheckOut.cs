@@ -31,7 +31,7 @@ namespace Aplikasi_TiketKeun.WinForm
             while (ItemRow.Read())
             {
                 string ItemName = ItemRow["Name"].ToString();
-                ItemCB.Items.Add(ItemName);
+                //ItemCB.Items.Add(ItemName);
             }
             conn.Close();
         }
@@ -40,7 +40,7 @@ namespace Aplikasi_TiketKeun.WinForm
         {
             MySqlConnection conn = new MySqlConnection(SQLConn);
             conn.Open();
-            string Query = "SELECT RoomNumber FROM room";
+            string Query = "SELECT room.RoomNumber FROM reservationroom INNER JOIN room ON reservationroom.ID = room.ID";
             MySqlCommand cmd = new MySqlCommand(Query, conn);
             cmd.ExecuteNonQuery();
             MySqlDataReader row;
@@ -56,9 +56,9 @@ namespace Aplikasi_TiketKeun.WinForm
         {
             MySqlConnection conn = new MySqlConnection(SQLConn);
             conn.Open();
-            string QItemID = "SELECT Name FROM item WHERE Name=@Name";
+            string QItemID = "SELECT * FROM item WHERE Name=@Name";
             MySqlCommand cmd = new MySqlCommand(QItemID, conn);
-            cmd.Parameters.AddWithValue("@Name", ItemCB.Text);
+            //cmd.Parameters.AddWithValue("@Name", ItemCB.Text);
             cmd.ExecuteNonQuery();
             MySqlDataReader row;
             row = cmd.ExecuteReader();
@@ -70,20 +70,43 @@ namespace Aplikasi_TiketKeun.WinForm
         }
         private void CheckOut_Load(object sender, EventArgs e)
         {
-            LoadItem();
+            MySqlConnection conn = new MySqlConnection(SQLConn);
+            string Loader = "SELECT * FROM reservationcheckout";
+            conn.Open();
+            DataTable Table = new DataTable();
+            MySqlDataAdapter DA = new MySqlDataAdapter(Loader, conn);
+            DA.Fill(Table);
+            dataGridView1.DataSource = Table;
+            //LoadItem();
             LoadRoomFloor();
             
         }
-
+        string LoadItemCB;
+        int QtyItem;
         private void NomorRuanganCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(SQLConn);
             string QDBLoader = "SELECT item.Name, resItem.Qty, item.CompensationFee FROM `reservationroom` INNER JOIN reservation_request_item AS resItem INNER JOIN item INNER JOIN room ON reservationroom.ID = resItem.ReservationRoomID AND resItem.ItemID = item.ID AND room.ID = reservationroom.RoomID WHERE reservationroom.CheckOutDateTime IS NULL AND reservationroom.ID ='" + NomorRuanganCB.Text + "'";
+            string Loader = "SELECT * FROM `reservationcheckout";
             conn.Open();
             DataTable Table = new DataTable();
-            MySqlDataAdapter DA = new MySqlDataAdapter(QDBLoader, conn);
+            MySqlDataAdapter DA = new MySqlDataAdapter(Loader, conn);
             DA.Fill(Table);
             dataGridView1.DataSource = Table;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+
+                LoadItemCB = dataGridView1.Rows[row.Index].Cells["Name"].FormattedValue.ToString();
+                ListItemBox.Text += LoadItemCB + " ";
+
+
+                QtyItem = int.Parse(dataGridView1.Rows[row.Index].Cells["QTY"].FormattedValue.ToString());
+                QTYBox.Value = QtyItem;
+
+            }
+
+
 
         }
 
@@ -96,7 +119,12 @@ namespace Aplikasi_TiketKeun.WinForm
 
         private void ItemCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetItemID();
+            //GetItemID();
+            
+        }
+
+        private void ListItemBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -29,7 +29,7 @@ namespace Aplikasi_TiketKeun.WinForm
             MySqlConnection conn = new MySqlConnection(SQLConn);
             conn.Open();
             //string Query = "SELECT * FROM customer WHERE CustomerID=@CSID";
-            string Query = "SELECT * FROM customer AS cus INNER JOIN reservation AS res ON cus.CustomerID = res.CustomerID WHERE res.Code=@Code";
+            string Query = "SELECT * FROM customer AS cus INNER JOIN reservation AS res ON cus.ID = res.ID WHERE res.Code=@Code";
             
             string QDataReservation = "SELECT reservationroom.* FROM reservationroom INNER JOIN reservation ON reservation.ID = reservationroom.ReservationID WHERE reservation.Code ='" + BookingCodeBox.Text + "'";
             MySqlCommand cmd = new MySqlCommand(Query,conn);
