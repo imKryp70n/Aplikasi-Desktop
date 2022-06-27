@@ -31,57 +31,56 @@ namespace Aplikasi_TiketKeun.WinForm
             }
         }
 
+        /*********************************************************
+         * Inisialisasi variabel untuk penyimpanan global
+         * 
+         */
+
         long TempTotal;
-        long TempHargaKamar;
         long CancelItem;
         long CancelKamar;
 
-        long Harga;
-        long Total;
-        long TotalItemAsli;
-        long Jumlah;
+        long[] Total = new long[10];
         int Price;
         long TotalKamar;
-        long TotalFix;
-        long TotalFix2;
-        long TotalMalam;
-        long TotalItem;
-        long jumlahMalam;
-        //Hitung dan display total
+
+        int hargaItemInc = 0;
+
+        /***********************************************************
+         * Fungsi cek total harga kamar
+         * 
+         */
+
         private void updateTotal(long HargaKamar, long HargaItem, bool isKamarDeleted = false, bool isItemDeleted = false)
         {
-            /* MessageBox.Show(TotalKamar.ToString());
-             MessageBox.Show(MalamBox.Value.ToString());
-             MessageBox.Show(Price.ToString());
-             MessageBox.Show(JumlahItem.ToString());
-
- */
+            //Inisialisasi
             long TotalKamar;
             long TotalItem;
 
+            //Menghitung total harga kamar dan harga item
             TotalKamar = HargaKamar * MalamBox.Value;
             TotalItem = HargaItem * QtyBox.Value;
-            // kamar * malam = totkamar
-            // item * qty = totItem
 
+            //Jika tidak ada pembatalan
             if (isKamarDeleted == false && isItemDeleted == false)
             {
                 TempTotal += TotalKamar + TotalItem;
             }
 
+            //Jika ada pembatalan kamar
             if (isKamarDeleted)
             {
                 long tempDeleteKamar;
                 tempDeleteKamar = CancelKamar * MalamBox.Value;
                 TempTotal -= tempDeleteKamar;
             }
+
+            //Jika ada pembatalan item
             if (isItemDeleted)
             {
                 long tempDeleteItem;
                 tempDeleteItem = CancelItem;
-                //MessageBox.Show(tempDeleteItem.ToString());
                 TempTotal -= tempDeleteItem;
-                //apa gitu
             }
             TotalBayarLBL.Text = TempTotal.ToString();
         }
@@ -171,23 +170,18 @@ namespace Aplikasi_TiketKeun.WinForm
 
         }
 
+        // ----------------------- Fungsi Search Kamar --------------------------
         private void gunaButton12_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(SQLConn);
             conn.Open();
-            //tring Query = "SELECT * FROM roomtype WHERE Name=@Name";
-/*            MySqlCommand cmd = new MySqlCommand(Query, conn);
-            cmd.Parameters.AddWithValue("@Name", RoomTypeCB.Text);
-            var search = cmd.ExecuteNonQuery();*/
             DataTable Table = new DataTable();
             MySqlDataAdapter DA = new MySqlDataAdapter("SELECT room.RoomTypeID, roomtype.Name, room.RoomNumber, room.RoomFloor ,room.Description, roomtype.RoomPrice FROM room JOIN roomtype WHERE room.RoomTypeID=roomtype.ID AND roomtype.Name='" + RoomTypeCB.Text+"'", conn);
             DA.Fill(Table);
             dataGridView1.DataSource = Table;
-
-
-
         }
         
+        // ------------------------ Fungsi menambahkan pesanan kamar -----------------------
         private void gunaButton2_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
@@ -208,13 +202,6 @@ namespace Aplikasi_TiketKeun.WinForm
             }
 
             updateTotal(TotKamar, 0);
-            
-/*            TotalFix2 = TotalFix2 + TotalKamar;
-            TotalFix = TotalFix + TotalFix2;
-            TotalBayarLBL.Text = TotalFix.ToString();
-*/  
-            //updateTotal();
-            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -233,9 +220,6 @@ namespace Aplikasi_TiketKeun.WinForm
             {
 
                 CancelKamar = long.Parse(dataGridView4.Rows[row.Index].Cells["RoomPrice"].FormattedValue.ToString());
-                /*MessageBox.Show(CancelKamar.ToString());*/
-                /*TotalFix2 = TotalFix2 - CancelKamar;
-                TotalBayarLBL.Text = TotalFix2.ToString();*/
                 updateTotal(0, 0, true);
                 dataGridView4.Rows.RemoveAt(row.Index);
                 
@@ -259,20 +243,18 @@ namespace Aplikasi_TiketKeun.WinForm
                 row = cmd.ExecuteReader();
                 int ItemPID = 0;
                 // --------------------------- MENAMBAHKAN HARGA BARANG KE DATA GRID ------------------------------
+                
                 while (row.Read())
                 {
                     Price = int.Parse( row["RequirePrice"].ToString());
-                    Total = Price * QtyBox.Value;
+                    Total[hargaItemInc] = Price * QtyBox.Value;
                     ItemPID = int.Parse( row["ID"].ToString());
-
-                    /*JumlahItem = QtyBox.Value;*/
-                    //MessageBox.Show(ItemID.ToString());
                 }
 
                 //cmd.Parameters.AddWithValue("@Name");
-                string[] InputData = {"",ItemPID.ToString(),ItemCB.Text, QtyBox.Value.ToString(), RoomNumberBox.Text, Total.ToString()};
+                string[] InputData = {"",ItemPID.ToString(),ItemCB.Text, QtyBox.Value.ToString(), RoomNumberBox.Text, Total[hargaItemInc].ToString()};
                 dataGridView5.Rows.Add(InputData);
-
+                hargaItemInc++;
                 // --------------------------- MENAMBAHKAN HARGA ITEM KE TOTAL BAYAR ----------------------------
                 long TotItem = 0;
                 foreach (DataGridViewRow dgvRow in dataGridView5.Rows)
@@ -306,10 +288,7 @@ namespace Aplikasi_TiketKeun.WinForm
             var senderGrid = (DataGridView)sender;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                
                 CancelItem = long.Parse(dataGridView5.Rows[e.RowIndex].Cells["HargaItem"].Value.ToString());
-                /*TotalFix = TotalFix - int.Parse(rawText);
-                TotalBayarLBL.Text = TotalFix.ToString();*/
                 updateTotal(0, 0, false, true);
                 dataGridView5.Rows.RemoveAt(e.RowIndex);
             }
@@ -329,8 +308,6 @@ namespace Aplikasi_TiketKeun.WinForm
 
         private void gunaNumeric2_ValueChanged(object sender, EventArgs e)
         {
-            //jumlahMalam = MalamBox.Value;
-            //TotalFix2 = TotalFix2 + TotalMalam;
            
         }
 
@@ -346,6 +323,7 @@ namespace Aplikasi_TiketKeun.WinForm
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
+            //Randomize kode
             var chars = "0123456789";
             var stringChars = new char[5];
             var random = new Random();
@@ -355,36 +333,27 @@ namespace Aplikasi_TiketKeun.WinForm
                 stringChars[i] = chars[random.Next(chars.Length)];
                 CSID[i] = chars[random.Next(chars.Length)];
             }
-
             int CODE = int.Parse(new String(stringChars));
+
+            //Inisialisasi variabel
             int CustomerID = int.Parse(new String(CSID));
             int RoomNum = 0;
             int RoomID = 0;
             int RoomFloor = 0;
             int PriceRoom = 0;
-            foreach (DataGridViewRow dgvRow in dataGridView4.Rows)
-            {
-                
-
-            }
 
             MySqlConnection conn = new MySqlConnection(SQLConn);
-
-            /*try
-            {*/
                 string Query = "INSERT INTO reservation(ID, DateTime, EmployeeID, CustomerID, Code) VALUES (NULL,@DateTime,@EmployeeID,@CustomerID,@Code)";
                 conn.Open();
 
 
                 string GetCustomerID = "SELECT ID FROM customer WHERE Name=@Name AND PhoneNumber=@PhoneNumber";
-                //string AddCustomer = "INSERT INTO customer SET Name=@Name,PhoneNumber=@PhoneNumber";
                 string AddCustomer = "INSERT INTO customer (ID, Name, NIK, Email, Gender, PhoneNumber, Age) VALUES (NULL,@Name, '', '', '', @PhoneNumber, 0)";
                 string InsertDataResRoom = "INSERT INTO reservationroom(ID, ReservationID, RoomID, StartDateTime, DurationNight, RoomPrice, CheckInDateTime, CheckOutDateTime) VALUES (NULL,@ReservationID,@RoomID,@StartDateTime,@DurationNight,@RoomPrice,@CheckInDateTime,@CheckOutDateTime)";
                 MySqlCommand AddCS = new MySqlCommand(AddCustomer, conn);
 
                 AddCS.Parameters.AddWithValue("@Name", NameBox.Text);
                 AddCS.Parameters.AddWithValue("@PhoneNumber", PhoneNumber.Text);
-                //AddCS.Parameters.AddWithValue("@CSID", CustomerID);
                 AddCS.ExecuteNonQuery();
                 conn.Close();
                 // ----------------------------------------------------------------------------
@@ -410,47 +379,31 @@ namespace Aplikasi_TiketKeun.WinForm
                 cmd.Parameters.AddWithValue("@Code", CODE);
 
 
-
-            // ---------------------------------------------------------------------------
-
-
             if (cmd.ExecuteNonQuery() > 0)
-            {
-
-                /*string QueryGetItemResID = "SELECT ID FROM reservationroom GROUP BY ID DESC LIMIT 1";
-                MySqlCommand QGItemID = new MySqlCommand(QueryGetItemResID, conn);
-                QGItemID.ExecuteNonQuery();
-                MySqlDataReader RowItemID;
-                RowItemID = QGItemID.ExecuteReader();*/
-
-                /*RowItemID.Read();
-                int GetNewItemID = int.Parse(RowItemID["ID"].ToString());*/
-                
-                //MessageBox.Show(GetNewItemID.ToString());
-
+            { 
                 conn.Close();
                 MessageBox.Show("Reservasi Berhasil");
                 
+                //Untuk setiap pesanan kamar masukkan ke tabel reservation
                 foreach (DataGridViewRow row in dataGridView4.Rows)
                 {
+                    //Open Koneksi - Ambil input dan ambil ID reservasi
                     conn.Open();
-
-
                     RoomID = int.Parse(row.Cells["RoomID"].Value.ToString());
                     RoomNum = int.Parse(row.Cells["RoomNumber"].Value.ToString());
                     RoomFloor = int.Parse(row.Cells["RoomFloor"].Value.ToString());
-                    //MessageBox.Show(RoomID.ToString());
                     PriceRoom = int.Parse(row.Cells["RoomPrice"].Value.ToString());
                     string QueryGetID = "SELECT ID FROM reservation GROUP BY ID DESC LIMIT 1";
-
                     MySqlCommand QGID = new MySqlCommand(QueryGetID, conn);
                     QGID.ExecuteNonQuery();
                     MySqlDataReader RowID;
                     RowID = QGID.ExecuteReader();
                     RowID.Read();
                     var GetNewResID = RowID["ID"];
-                    //MessageBox.Show(test.ToString());
                     conn.Close();
+                    //Koneksi ditutup
+
+                    //Open Koneksi - Input data ke tabel reservasi
                     conn.Open();
                     MySqlCommand cmdInsertDataResRoom = new MySqlCommand(InsertDataResRoom, conn);
                     var StartDate = Convert.ToDateTime(DateTime.Text).ToString("yyyy-MM-dd");
@@ -462,62 +415,49 @@ namespace Aplikasi_TiketKeun.WinForm
                     cmdInsertDataResRoom.Parameters.AddWithValue("@CheckInDateTime", StartDate);
                     cmdInsertDataResRoom.Parameters.AddWithValue("@CheckOutDateTime", StartDate);
                     cmdInsertDataResRoom.ExecuteNonQuery();
-
-
-                    // -------------------------------- GET ID RESERVATION ROOM FOR ADDITIONAL ITEM-------------------------------
-                    
-
-                    
-
                     conn.Close();
-                    conn.Open();
-                    string QueryGetItemResID = "SELECT ID FROM reservationroom GROUP BY ID DESC LIMIT 1";
-                    MySqlCommand QGItemID = new MySqlCommand(QueryGetItemResID, conn);
-                    QGItemID.ExecuteNonQuery();
-                    MySqlDataReader RowItemID;
-                    RowItemID = QGItemID.ExecuteReader();
-                    int GetNewItemID = 0;
-                    if (RowItemID.Read())
-                    {
-                        GetNewItemID = int.Parse(RowItemID["ID"].ToString());
-                    }
-                    conn.Close();
-                    conn.Open();
-                    // ------------------------------- INSERT ADDITIONAL ITEM --------------------------------
-
-                    foreach (DataGridViewRow rowAddItem in dataGridView5.Rows)
-                    {
-                        ItemID = int.Parse(dataGridView5.Rows[rowAddItem.Index].Cells["ItemPID"].FormattedValue.ToString());
-
-                        string QueryAddItem = "INSERT INTO reservation_request_item(ID, ReservationRoomID, ItemID, Qty, TotalPrice) VALUES (NULL,@ReservationRID,@ItemID,@Qty,@TotalPrice)";
-                        MySqlCommand cmdAddItem = new MySqlCommand(QueryAddItem, conn);
-                        cmdAddItem.Parameters.AddWithValue("@ReservationRID", GetNewItemID);
-                        cmdAddItem.Parameters.AddWithValue("@itemID", ItemID);
-                        cmdAddItem.Parameters.AddWithValue("@Qty", QtyBox.Value);
-                        cmdAddItem.Parameters.AddWithValue("@TotalPrice", Total);
-
-
-                        cmdAddItem.ExecuteNonQuery();
-                    }
-                        //conn.Close();                        
-                    // ---------------------------------------------------------------
-
-                    conn.Close();
+                    //Koneksi ditutup
                 }
             }
             else
             {
                 MessageBox.Show("Reservasi gagal");
-
             }
 
-            /*}
-            catch (Exception ex)
+            //Koneksi open - Mengambil ID reservationroom untuk insert data pesanan item
+            conn.Open();
+            string QueryGetItemResID = "SELECT ID FROM reservationroom GROUP BY ID DESC LIMIT 1";
+            MySqlCommand QGItemID = new MySqlCommand(QueryGetItemResID, conn);
+            QGItemID.ExecuteNonQuery();
+            MySqlDataReader RowItemID;
+            RowItemID = QGItemID.ExecuteReader();
+            int GetNewItemID = 0;
+            if (RowItemID.Read())
             {
-                MessageBox.Show(ex.Message);
+                GetNewItemID = int.Parse(RowItemID["ID"].ToString());
+            }
+            conn.Close();
+            //Koneksi Ditutup
+            
+            //Koneksi open - Memasukkan item yang diminta ke dalam tabel reservation_request_item
+            conn.Open();
+            int TotalIndex = 0;
+            foreach (DataGridViewRow rowAddItem in dataGridView5.Rows)
+            {
+                ItemID = int.Parse(dataGridView5.Rows[rowAddItem.Index].Cells["ItemPID"].FormattedValue.ToString());
 
-            }*/
-
+                string QueryAddItem = "INSERT INTO reservation_request_item(ID, ReservationRoomID, ItemID, Qty, TotalPrice) VALUES (NULL,@ReservationRID,@ItemID,@Qty,@TotalPrice)";
+                MySqlCommand cmdAddItem = new MySqlCommand(QueryAddItem, conn);
+                cmdAddItem.Parameters.AddWithValue("@ReservationRID", GetNewItemID);
+                cmdAddItem.Parameters.AddWithValue("@itemID", ItemID);
+                cmdAddItem.Parameters.AddWithValue("@Qty", QtyBox.Value);
+                cmdAddItem.Parameters.AddWithValue("@TotalPrice", Total[TotalIndex]);
+                cmdAddItem.ExecuteNonQuery();
+                TotalIndex++;
+            }
+            hargaItemInc = 0;
+            conn.Close();
+            //Koneksi ditutup dan akhir dari kodingan
         }
 
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)

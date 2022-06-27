@@ -141,3 +141,44 @@ C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterItem.resources
 C:\Users\AxxelXD\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.UserEmployee.resources
 C:\Users\BARA ENTERPRISE\Documents\GitHub\Aplikasi-Desktop\obj\Debug\Aplikasi_TiketKeun.WinForm.UserEmployee.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\Aplikasi TiketKeun.exe.config
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\Aplikasi TiketKeun.exe
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\Aplikasi TiketKeun.pdb
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\Google.Protobuf.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\ZstdNet.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\BouncyCastle.Crypto.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\Ubiety.Dns.Core.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\System.Memory.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\System.Buffers.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\K4os.Compression.LZ4.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\K4os.Hash.xxHash.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\System.Numerics.Vectors.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\MySql.Data.xml
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\MySql.Data.EntityFramework.xml
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.csproj.AssemblyReference.cache
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.csproj.SuggestedBindingRedirects.cache
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.exe.config
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.About.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.Beranda.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.HouseKeeper.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.HouseKeeperSupervisor.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.Login.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.Properties.Resources.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.Register.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.CheckIn.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.CheckOut.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.DeleteForm.DeleteItem.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterItem.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterRoom.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.MasterRoomType.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.RequestAdditionalItem.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.Reservation.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi_TiketKeun.WinForm.UserEmployee.resources
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.csproj.GenerateResource.cache
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.csproj.CoreCompileInputs.cache
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.csproj.CopyComplete
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.exe
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\obj\Debug\Aplikasi TiketKeun.pdb
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\MySql.Data.dll
+D:\Programs\laragon\www\kerjaantaufik\DesktopApp-Fix\bin\Debug\MySql.Data.EntityFramework.dll
